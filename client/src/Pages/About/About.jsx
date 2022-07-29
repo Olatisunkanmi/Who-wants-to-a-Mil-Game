@@ -6,6 +6,10 @@ import { ArrowRightAlt, GitHub, Instagram, LinkedIn, MailOutline, Twitter } from
 
 
 const About = () => {
+
+  const pop = () => {
+    alert('BLOG COMING SOON !!!!!')
+  }
  
   return (
     <div>
@@ -63,8 +67,8 @@ const About = () => {
                                         
 
                                                   <div>
-                                                  <button className='mt-10 border-4 p-3 bg-veryLightBrown rounded-lg font-bold' > 
-                                                    <Link to="/posts/" className='link'>
+                                                  <button className='mt-10 border-4 p-3 bg-veryLightBrown rounded-lg font-bold' onClick={pop}> 
+                                                    <Link to="/" className='link'>
                                                         Go To Blog
                                                     </Link>
                                               
