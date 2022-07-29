@@ -18,7 +18,7 @@ const About = () => {
 
       <div>
         <div 
-          className='text-center mt-5'>
+          className='text-center my-5'>
               <h3 
               className='about'> About Me .</h3>
         </div>
@@ -94,7 +94,7 @@ const About = () => {
                           className='text-xl font-serif'>Everything Begins with an Hello !</p>
                         </div>
 
-                        <div className="w-3/5 text-center space-x-10 text-3xl">
+                        <div className="w-3/5 text-center space-x-3 md:space-x-10 text-3xl">
 
                                     <a href="https://github.com/Olatisunkanmi " target='_blank'>
                                     <GitHub className="icons"/>
@@ -125,11 +125,11 @@ const About = () => {
 
 
                         <div 
-                          className="flex flex-col w-1/5 md:block">
-                          <p className='text-lg font-bold'> Cracked Inc.</p>
+                          className="flex flex-row md:flex-col  w-1/5 md:block justify-around">
+                          <p className='text-sm font-bold mr-2 '> Cracked Inc.</p>
 
-                          <p className='font-bold'>  
-                          <span className='text-lg'>&copy;</span>
+                          <p className='font-bold text-sm ml-3'>  
+                          <span className='text-sm'>&copy;</span>
                           2022 | All Rights Reserved.</p>
                           
                               <button  className='hidden mt-1 border-4 p-3 bg-white rounded-lg font-bold text-black' > 
