@@ -76,6 +76,6 @@ app.use("/api/posts", POSTCREATE);
 app.use("/api/category", CATCREATE); 
 app.use("/api/comment", COMCREATE); 
 
-app.listen("5000", () => {
+app.listen("3500", () => {
     console.log('Node is listening on Port 3500');
 })
