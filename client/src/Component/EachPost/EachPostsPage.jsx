@@ -9,7 +9,6 @@ const Posts = () => {
     (async () => {
        const res = await axios.get("/posts" );
        setPosts(res.data);
-       console.log(res.data)
       })     ();
 
       
@@ -23,7 +22,10 @@ useEffect(() => {
         <Header />
         <Topbar  /> 
 
-        
+          {posts.map((cur ) => ( 
+            <AllPostsCard key={cur._id}
+            post={cur} />
+          ))}
         
       
         <Footer /> 
