@@ -4,7 +4,7 @@ import {Link } from "react-router-dom"
  
 
 const CardList = ({post} ) => {
-  const PF =  "http://localhost:5000/images/"    
+  const PF =  "https://cracked-ink-cv.herokuapp.com/images/"    
   // console.log(post);
   
 
@@ -36,12 +36,7 @@ const CardList = ({post} ) => {
 
                                   <div 
                                   className="CardCat">
-                                            <p> {post.categories }</p>
-                                            {
-                                              post.categories.map(c => (
-                                                <span> {c.name}</span>
-                                              ))
-                                            }
+                                        
                                   </div>
                         </div>
                   
