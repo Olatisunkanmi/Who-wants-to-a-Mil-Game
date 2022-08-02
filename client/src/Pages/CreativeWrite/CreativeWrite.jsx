@@ -17,7 +17,7 @@ const [newPost, setNewPosts ] =  useState([])
               
                 try {
               const res = await axios.get("/posts" );
-                  console.log(res);
+                  // console.log(res);
                                       try {
  
                                         let   newArr =  res.data;
@@ -40,7 +40,7 @@ const [newPost, setNewPosts ] =  useState([])
                                       } catch (error) {
                                              
                                       }
-                          try {
+              try {
                                 // getting the last post to send to <FirstCard />
                                  // finding the last post of the array
               const newPost =  res.data[res.data.length - 1];
@@ -68,8 +68,10 @@ const [newPost, setNewPosts ] =  useState([])
 
     <Header />
     <Topbar  /> 
-    <FirstCard newPost={newPost}/>
-    <FeaturedCard posts={posts}/>
+    
+        <FirstCard  key={newPost.title}  newPost={newPost}/>
+         <FeaturedCard  key={posts }   posts={posts }/>
+   
     <Footer /> 
 
         </div>
