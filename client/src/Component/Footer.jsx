@@ -43,12 +43,12 @@ const handleSubcribe = () => {
                                                 type="text" 
                                                 id="email"
                                                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                                                class="text-black p-3 flex-1 px-5 rounded-full focus:outline-none 
+                                                className="text-black p-3 flex-1 px-5 rounded-full focus:outline-none 
                                                   placeholder:text-black placeholder:italic" 
                                                 placeholder="Enter Your mail"
                                                   required/>
 
-                                                <div class="flex mt-3 justify-center md:justify-start font-bold"> 
+                                                <div className="flex mt-3 justify-center md:justify-start font-bold"> 
                                                 <button
                                                 href="#" 
                                                 className="p-3 px-6 pt-2 text-black bg-brightRed rounded-full baseline
