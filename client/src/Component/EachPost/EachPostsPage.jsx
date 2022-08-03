@@ -1,6 +1,6 @@
 import { Topbar, Header, Footer,  AllPostsCard} from "../Index";
 import axios from "axios"
-import { useEffect , useState } from "react";
+import { useEffect, useState } from "react";
 
 
 
@@ -11,7 +11,10 @@ const Posts = () => {
        setPosts(res.data);
       })     ();
 
-      // console.log(posts);
+      
+useEffect(() => {
+  
+}, [posts])
 
   
   return (
@@ -19,16 +22,11 @@ const Posts = () => {
         <Header />
         <Topbar  /> 
 
-
-
-
-          {
-          posts.map((cur ) => (
-            <AllPostsCard 
-            key={cur._id}
+          {posts.map((cur ) => ( 
+            <AllPostsCard key={cur._id}
             post={cur} />
-          ))
-        }
+          ))}
+        
       
         <Footer /> 
     </div>
