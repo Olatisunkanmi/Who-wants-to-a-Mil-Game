@@ -6,12 +6,12 @@ import { useEffect , useState } from "react";
 
 const Posts = () => {
   const [posts, setPosts ] = useState([]);
-
     (async () => {
        const res = await axios.get("/posts" );
        setPosts(res.data);
       })     ();
 
+      // console.log(posts);
 
   
   return (
@@ -25,6 +25,7 @@ const Posts = () => {
           {
           posts.map((cur ) => (
             <AllPostsCard 
+            key={cur._id}
             post={cur} />
           ))
         }
