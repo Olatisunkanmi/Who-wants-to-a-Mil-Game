@@ -9,7 +9,7 @@ import { useState } from 'react';
 const SinglePost = () => {
 
   const {user } = useAuth()
-  const PF =  "http://localhost:5000/images/";
+  const PF =  "https://cracked-ink-cv.herokuapp.com/images/";
   const [cat, setCats] =  useState([])
   const [updatemode, setUpdateMode ] =  useState(false)
   const [title, setTitle ] =  useState('')
@@ -92,11 +92,9 @@ const SinglePost = () => {
       
   }
   return (
-    <> 
+  
 
     <div>
-        
-        
                             <div className='text-center flex flex-col  items-center p-6 m-10'>
                                         <img src={PF + post.photo} alt="" className='w-full md:w-2/4 
                                         text-center justify-center align-center object-cover'/>
@@ -211,13 +209,9 @@ const SinglePost = () => {
                                                          <div>
                                                          <p className='text-lg font-bold'> </p>
 
-                                                         {
-                                                          comments.map(cur => (
-                                                            <p  
-                                                              className='my-5 text-lg font-mono p-2 bg-white'>
-                                                         
-                                                              {cur }</p>
-                                                          ))
+                                                         { comments.map(cur => (
+                                                          <p className='my-5 text-lg font-mono p-2 bg-white' key={cur.title}>
+                                                                 {cur }</p>   ))
                                                          }
                                                         
 
@@ -228,7 +222,6 @@ const SinglePost = () => {
               </div>
             
    </div>
-    </>
   )
 }
 

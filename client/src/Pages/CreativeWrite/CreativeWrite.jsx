@@ -40,6 +40,12 @@ const [newPost, setNewPosts ] =  useState([])
                                       } catch (error) {
                                              
                                       }
+
+
+
+
+
+
               try {
                                 // getting the last post to send to <FirstCard />
                                  // finding the last post of the array
@@ -70,7 +76,7 @@ const [newPost, setNewPosts ] =  useState([])
     <Topbar  /> 
     
         <FirstCard  key={newPost.title}  newPost={newPost}/>
-         <FeaturedCard  key={posts }   posts={posts }/>
+         <FeaturedCard  key={posts.title }   posts={posts }/>
    
     <Footer /> 
 

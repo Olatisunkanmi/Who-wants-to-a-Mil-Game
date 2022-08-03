@@ -4,7 +4,7 @@ import './FirstCard.css';
 
 
 const FirstCard = ({newPost}) => {
-      const PF =  "http://localhost:5000/images/";
+      const PF =  "https://cracked-ink-cv.herokuapp.com/images/";
       // Send only last item to array to first card.
 
         // console.log(newPost);

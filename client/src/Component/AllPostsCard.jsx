@@ -43,13 +43,13 @@ const AllPostsCard = ({post}) => {
 
                                                       <div  
                                                       className="mt-5">
-                                                              <a href="" className="">
+                                                           
                                                               <Link to={`/posts/${post._id}`}>
                                                               READ MORE
-                                                              </Link>
                                                             <ArrowRightAlt 
                                                               className=""/>
-                                                            </a>
+                                                            
+                                                            </Link>
 
                                                             <div className=" h-1 bg-zinc-700 border-none w-8"></div>
 
