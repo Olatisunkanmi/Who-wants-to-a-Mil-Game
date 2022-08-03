@@ -203,12 +203,7 @@ const SinglePost = () => {
                                                          <div>
                                                          <p className='text-lg font-bold'> </p>
 
-                                                         { comments.map(cur => (
-                                                          <p className='my-5 text-lg font-mono p-2 bg-white' key={cur.value}>
-                                                                 {cur }</p>   ))
-                                                         }
-                                                        
-
+                                                       
                                                          </div>
                                                 </div>
                                </div>
