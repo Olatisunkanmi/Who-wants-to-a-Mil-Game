@@ -22,7 +22,12 @@ const Posts = () => {
 
 
 
-      
+          {
+          posts.map((cur ) => (
+            <AllPostsCard 
+            post={cur} />
+          ))
+        }
       
         <Footer /> 
     </div>
