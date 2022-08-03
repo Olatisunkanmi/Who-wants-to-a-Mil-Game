@@ -4,6 +4,8 @@ import {  useState } from "react";
 import { ArrowRightAlt, CommentOutlined, FavoriteBorderOutlined, Share } from "@material-ui/icons";
 
 const AllPostsCard = ({post}) => {
+
+
   const Path = useLocation()
 
  const  PostLikes = post.likes.length 
