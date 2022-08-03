@@ -16,29 +16,23 @@ const SinglePost = () => {
   const [desc, setDesc ] =  useState('')
   const [post, setPost ] = useState ({})
   const [comments, setComments] = useState([])
- let COMMENTERROR = false
-  
 
-  useEffect(() => {
+  console.log(comments)
+ let COMMENTERROR = false
       const getCats = async () => {
-           const res = await axios .get(`/posts`);
+      const res = await axios .get(`/posts`);
             
       }
       getCats()
-  }, [])
-
 
    // getting the Id of the post
 //    so all post and open on a new page in repect to their ids 
   const location = useLocation().pathname.split('/')[2]
 
-
-  const lot = useLocation()
   useEffect(() => {
       const getDetails = async () => {
-          const res = await axios.get(`/posts/${location}`);    
 
-          
+          const res = await axios.get(`/posts/${location}`);    
           setPost(res.data);
           setTitle(res.data.title);
           setDesc(res.data.desc);
@@ -210,7 +204,7 @@ const SinglePost = () => {
                                                          <p className='text-lg font-bold'> </p>
 
                                                          { comments.map(cur => (
-                                                          <p className='my-5 text-lg font-mono p-2 bg-white' key={cur.title}>
+                                                          <p className='my-5 text-lg font-mono p-2 bg-white' key={cur.value}>
                                                                  {cur }</p>   ))
                                                          }
                                                         
