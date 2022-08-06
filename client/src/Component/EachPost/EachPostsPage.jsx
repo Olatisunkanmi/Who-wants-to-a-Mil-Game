@@ -9,6 +9,7 @@ const Posts = () => {
     (async () => {
        const res = await axios.get("/posts" );
        setPosts(res.data);
+       console.log(res.data)
       })     ();
 
       
