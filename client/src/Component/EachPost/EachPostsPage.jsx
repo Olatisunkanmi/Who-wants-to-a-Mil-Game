@@ -22,10 +22,7 @@ useEffect(() => {
         <Header />
         <Topbar  /> 
 
-          {posts.map((cur ) => ( 
-            <AllPostsCard key={cur._id}
-            post={cur} />
-          ))}
+        
         
       
         <Footer /> 
