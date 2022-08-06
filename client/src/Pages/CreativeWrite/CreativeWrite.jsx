@@ -17,7 +17,7 @@ const [newPost, setNewPosts ] =  useState([])
               
                 try {
               const res = await axios.get("/posts" );
-                  // console.log(res);
+                  console.log(res);
                                       try {
  
                                         let   newArr =  res.data;
@@ -74,10 +74,8 @@ const [newPost, setNewPosts ] =  useState([])
 
     <Header />
     <Topbar  /> 
-    
-        <FirstCard  key={newPost.title}  newPost={newPost}/>
-         <FeaturedCard  key={posts.title }   posts={posts }/>
-   
+    <FirstCard  key={newPost.title}  newPost={newPost}/>
+    <FeaturedCard  key={posts.title }   posts={posts }/>
     <Footer /> 
 
         </div>
