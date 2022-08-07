@@ -1,14 +1,22 @@
 import {Link } from "react-router-dom";
 import {  CalendarTodayRounded} from  '@material-ui/icons'
 import './FirstCard.css';
+import { useContext, useEffect, useState } from "react";
+import {Context } from '../context/Context'
 
 
-const FirstCard = ({newPost}) => {
+
+const FirstCard = ({}) => {
+const { newPost}  = useContext(Context)
+
+            
+
       const PF =  "https://cracked-ink-cv.herokuapp.com/images/";
       // Send only last item to array to first card.
 
         // console.log(newPost);
   return (
+      
     <div className='max-w-6xl px-5 mx-auto mt-32 text-center'>
 
 
@@ -44,6 +52,7 @@ const FirstCard = ({newPost}) => {
                     </div>
 
     </div>
+
   )
 }
 
