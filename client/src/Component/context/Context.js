@@ -30,7 +30,9 @@ export const ContextProvider = ({ children }) => {
         };
         getDetails();  
         }, [Allpost])
-  
+
+
+        
 
         // this UseEffect fn is started when there is change to our user
     useEffect(() => {
@@ -48,6 +50,8 @@ export const ContextProvider = ({ children }) => {
                         error: state.error,
                         dispatch, 
                         Allpost,
+                        setAllPost,
+                        
                     
             }} 
          >  
