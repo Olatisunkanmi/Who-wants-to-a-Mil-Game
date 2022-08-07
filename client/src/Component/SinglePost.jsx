@@ -28,7 +28,6 @@ useEffect(() => {
   const [updatemode, setUpdateMode ] =  useState(false)
   const [title, setTitle ] =  useState('')
   const [desc, setDesc ] =  useState('')
-  const [post, setPost ] = useState ({})
   const [comments, setComments] = useState([])
 
   // console.log(comments)
