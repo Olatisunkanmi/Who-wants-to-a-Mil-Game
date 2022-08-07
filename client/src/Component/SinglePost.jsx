@@ -39,36 +39,19 @@ useEffect(() => {
       }
       getCats()
 
- 
-
-  
-
-  // useEffect(() => {
-  //     const getDetails = async () => {
-  //         const res = await axios.get(`/posts/${location}`);    
-  //         setPost(res.data);
-  //         setTitle(res.data.title);
-  //         setDesc(res.data.desc);
-  //       setComments(res.data.comments);
-
-  //     };
-  //     getDetails();  
-  // }, [location])
-
-  
 
   const handleUpdate = async() => {
-    //  try {
-    //   const res = await axios.put(`/posts/${SinglePost._id}`, {
-    //     username: user.username,
-    //     title,
-    //     desc
-    //   })  
-    //   setUpdateMode(false)
+     try {
+      const res = await axios.put(`/posts/${SinglePost._id}`, {
+        username: user.username,
+        title,
+        desc
+      })  
+      setUpdateMode(false)
 
-    //  } catch (error) {
+     } catch (error) {
      
-    //  }
+     }
   }
 
   const postComment = async () => {
