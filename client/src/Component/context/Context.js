@@ -18,19 +18,18 @@ export const Context = createContext(INITIAL_STATE);
 
 export const ContextProvider = ({ children }) => {    
         const [state, dispatch ] = useReducer(Reducer, INITIAL_STATE);
-        const [post , setPost ] = useState([])
+        const [Allpost , setAllPost ] = useState([])
 
 
         useEffect(() => {
         const getDetails = async () => {
 
         const res = await axios.get('https://cracked-ink-cv.herokuapp.com/api/posts');    
-        // setPost(res.data);
-        console.log(res.data)
+        setAllPost(res.data);
 
         };
         getDetails();  
-        }, [post])
+        }, [Allpost])
   
 
         // this UseEffect fn is started when there is change to our user
@@ -48,6 +47,8 @@ export const ContextProvider = ({ children }) => {
                         isFetching: state.isFetching,
                         error: state.error,
                         dispatch, 
+                        Allpost,
+                    
             }} 
          >  
             {children}
