@@ -9,11 +9,10 @@ import {Context } from '../Component/context/Context'
 import { useContext } from 'react';
 
 const SinglePost = () => {
-
   const { Allpost}  = useContext(Context)
-    console.log(Allpost)
+  // console.log(Allpost);
 
-  const {user } = useAuth()
+  const {user } = useAuth()  
   const PF =  "https://cracked-ink-cv.herokuapp.com/images/";
   const [cat, setCats] =  useState([])
   const [updatemode, setUpdateMode ] =  useState(false)
@@ -25,7 +24,7 @@ const SinglePost = () => {
   // console.log(comments)
  let COMMENTERROR = false
       const getCats = async () => {
-      const res = await axios .get(`/posts`);
+      // const res = await axios .get(`/posts`);
             
       }
       getCats()
@@ -36,8 +35,8 @@ const SinglePost = () => {
 
   useEffect(() => {
       const getDetails = async () => {
-
           const res = await axios.get(`/posts/${location}`);    
+          console.log(res.data)
           setPost(res.data);
           setTitle(res.data.title);
           setDesc(res.data.desc);
