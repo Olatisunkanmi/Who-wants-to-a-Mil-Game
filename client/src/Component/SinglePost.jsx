@@ -5,8 +5,13 @@ import { useEffect } from 'react';
 import axios from 'axios';
 import { useState } from 'react';
 // import { Comment, MenuBook, Person, Timer } from '@material-ui/icons';
+import {Context } from '../Component/context/Context'
+import { useContext } from 'react';
 
 const SinglePost = () => {
+
+  const { Allpost}  = useContext(Context)
+    console.log(Allpost)
 
   const {user } = useAuth()
   const PF =  "https://cracked-ink-cv.herokuapp.com/images/";
@@ -17,7 +22,7 @@ const SinglePost = () => {
   const [post, setPost ] = useState ({})
   const [comments, setComments] = useState([])
 
-  console.log(comments)
+  // console.log(comments)
  let COMMENTERROR = false
       const getCats = async () => {
       const res = await axios .get(`/posts`);
