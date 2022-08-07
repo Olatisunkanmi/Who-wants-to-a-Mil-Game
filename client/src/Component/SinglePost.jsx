@@ -1,16 +1,26 @@
  import { useAuth } from '../Hooks/useAuth';
 import   {EditOutlined } from '@material-ui/icons';
 import { useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useState } from 'react';
 // import { Comment, MenuBook, Person, Timer } from '@material-ui/icons';
-import {Context } from '../Component/context/Context'
-import { useContext } from 'react';
 
 const SinglePost = () => {
-  const { Allpost}  = useContext(Context)
-  // console.log(Allpost);
+  const [ SinglePost, setSinglePost ] = useState('')
+const location = useLocation().pathname.split('/')[2]
+
+  // getting the Id of the post
+//    so all post and open on a new page in repect to their ids 
+useEffect(() => {
+  const getSinglePost = async () => {
+  const res = await axios.get(`https://cracked-ink-cv.herokuapp.com/api/posts/${location}`);    
+  setSinglePost(res.data)
+
+  };
+  getSinglePost();  
+  }, )
+
+
 
   const {user } = useAuth()  
   const PF =  "https://cracked-ink-cv.herokuapp.com/images/";
@@ -29,37 +39,36 @@ const SinglePost = () => {
       }
       getCats()
 
-   // getting the Id of the post
-//    so all post and open on a new page in repect to their ids 
-  const location = useLocation().pathname.split('/')[2]
+ 
 
-  useEffect(() => {
-      const getDetails = async () => {
-          const res = await axios.get(`/posts/${location}`);    
-          console.log(res.data)
-          setPost(res.data);
-          setTitle(res.data.title);
-          setDesc(res.data.desc);
-        setComments(res.data.comments);
+  
 
-      };
-      getDetails();  
-  }, [location])
+  // useEffect(() => {
+  //     const getDetails = async () => {
+  //         const res = await axios.get(`/posts/${location}`);    
+  //         setPost(res.data);
+  //         setTitle(res.data.title);
+  //         setDesc(res.data.desc);
+  //       setComments(res.data.comments);
+
+  //     };
+  //     getDetails();  
+  // }, [location])
 
   
 
   const handleUpdate = async() => {
-     try {
-      const res = await axios.put(`/posts/${post._id}`, {
-        username: user.username,
-        title,
-        desc
-      })  
-      setUpdateMode(false)
+    //  try {
+    //   const res = await axios.put(`/posts/${SinglePost._id}`, {
+    //     username: user.username,
+    //     title,
+    //     desc
+    //   })  
+    //   setUpdateMode(false)
 
-     } catch (error) {
+    //  } catch (error) {
      
-     }
+    //  }
   }
 
   const postComment = async () => {
@@ -94,21 +103,21 @@ const SinglePost = () => {
 
     <div>
                             <div className='text-center flex flex-col  items-center p-6 m-10'>
-                                        <img src={PF + post.photo} alt="" className='w-full md:w-2/4 
+                                        <img src={PF + SinglePost.photo} alt="" className='w-full md:w-2/4 
                                         text-center justify-center align-center object-cover'/>
                         '
                                         {updatemode 
 
-                                          ? <input type='text' value={title} className='' onChange={(e) => setTitle(e.target.value)}  />
-                                          : <p className='mt-1 p-3 text-3xl md:text-5xl font-bold text-brightRed'> {title} </p>
+                                          ? <input type='text' value={SinglePost.title} className='' onChange={(e) => setTitle(e.target.value)}  />
+                                          : <p className='mt-1 p-3 text-3xl md:text-5xl font-bold text-brightRed'> {SinglePost.title} </p>
 
                                         }
 
 
                                                     <div className='mt-1 flex flex-row space-x-3 items-center font-bold text-veryLightBrown  sp'>
-                                                            <p className='capitalize text-black text-lg' > {post.username}</p>
+                                                            <p className='capitalize text-black text-lg' > {SinglePost.username}</p>
                                                             <p className=''>
-                                                            {new Date(post.createdAt).toDateString() }</p> 
+                                                            {new Date(SinglePost.createdAt).toDateString() }</p> 
                                                                 
                                                                 
                                                             {user && 
@@ -127,9 +136,9 @@ const SinglePost = () => {
                                       
                                        <div className='w-full md:w-2/3 leading-9 text-1xl md:text-xl font-serif'>
                                               {updatemode
-                                                ? <textarea className='w-full h-full' value={desc} onChange={(e) => setDesc(e.target.value)}  />
+                                                ? <textarea className='w-full h-full' value={SinglePost.desc} onChange={(e) => setDesc(e.target.value)}  />
 
-                                                :<p className='first-letter:ml-6 first-letter:text-4xl leading-loose'>  {desc }  </p>
+                                                :<p className='first-letter:ml-6 first-letter:text-4xl leading-loose'>  {SinglePost.desc }  </p>
 
                                               }
 
