@@ -1,6 +1,5 @@
 import { Topbar, Header, Footer,  AllPostsCard} from "../Index";
-import axios from "axios"
-import { useEffect, useState, useContext } from "react";
+import {useContext } from "react";
 import {Context } from '../context/Context'
 
 
