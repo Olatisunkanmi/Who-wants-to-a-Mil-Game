@@ -5,7 +5,6 @@ import {Link } from "react-router-dom"
 
 const CardList = ({post} ) => {
   const PF =  "https://cracked-ink-cv.herokuapp.com/images/"    
-  // console.log(post);
   
 
   return (
