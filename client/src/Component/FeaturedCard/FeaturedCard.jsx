@@ -1,8 +1,13 @@
 import { CardList  } from "../Index"
 import './FeaturedCard.css'
+import { useContext } from "react";
+import { Context } from "../context/Context";
 
-const FeaturedCard = ({posts}) => {
- 
+
+const FeaturedCard = () => {
+  const { RandomPosts}  = useContext(Context)
+
+
 
   return (
 
@@ -12,8 +17,9 @@ const FeaturedCard = ({posts}) => {
 
       <div className='flex flex-col md:flex md:flex-row space-x-10'>
               {
-                posts.map ((cur) => (
-                <CardList post= {cur} />   ))
+                RandomPosts.map ((cur) => (
+                <CardList key={cur._id} 
+                post= {cur} />   ))
               
               }
       </div>
@@ -25,8 +31,7 @@ const FeaturedCard = ({posts}) => {
           </button>
           </div>
    </div>
-   
- 
+
   )
 }
 
