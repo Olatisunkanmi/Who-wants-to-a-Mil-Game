@@ -5,11 +5,13 @@ import image from '../../Assests/write.svg';
 import {useAuth} from '../../Hooks/useAuth';
 import {Link, useLocation} from 'react-router-dom';
 import {  ChromeReaderMode, Delete, EditOutlined,Add, Book, ExitToApp, GolfCourse, NotificationImportantOutlined, Settings } from '@material-ui/icons';
-import axios from 'axios';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import {useContext } from "react";
+import {Context } from '../../Component/context/Context'
 
 const Edit = () => {
+  const { Allpost}  = useContext(Context)
+
+
   const {user , dispatch  } = useAuth();
     const handleLogout = () => {
         if(user ) {
@@ -17,21 +19,6 @@ const Edit = () => {
         }
     }
   
-    const [posts, setPosts] = useState([])
-
-    useEffect( () => {
-        const getData  = async () => {
-           try {
-          const  res = await axios.get('/posts')
-         setPosts(res.data)
-           } catch (error) {
-                    console.log(error);
-           }
-        } 
-
-getData()
-}, [])
-
 
 
 
@@ -161,8 +148,7 @@ getData()
             <div className='featured--posts'>
             <p className='featured-header'>Featured Posts</p>
             <ul className="featured--post--ul">
-                             {
-                                                    posts.map (cur => (
+                             {   Allpost.map (cur => (
                                                       <FeaturedPosts 
                                                       key={cur.title}
                                                       post={cur} />
