@@ -2,7 +2,7 @@ import { useLocation , useNavigate } from "react-router-dom";
 import upload  from '../../Assests/upload.svg'
 import "./Write.css";
 import { useAuth } from "../../Hooks/useAuth";
-import {AxiosInstance} from "axios";
+import {axios} from "axios";
 import { useState } from "react";
 
 export default function Write( ) {
@@ -34,16 +34,16 @@ const HandleSubmit = async (e) => {
 
         try {
               // upload Image
-              await AxiosInstance.post("/upload", data)
+              await axios.post("https://cracked-ink-cv.herokuapp.com/api/upload", data)
               
         } catch (error) {
               console.log(error);
         }
   }
         try {
-          const res = await AxiosInstance.post("/posts", newPost)
-          console.log(res);
-            navigate(`/posts/${res.data._id}`)
+          const res = await axios.post("https://cracked-ink-cv.herokuapp.com/api/posts", newPost)
+        
+            navigate(`https://cracked-ink-cv.herokuapp.com/api/posts/${res.data._id}`)
         } catch (error) {
                 console.log(error);
 
@@ -54,7 +54,7 @@ const HandleSubmit = async (e) => {
 
     //  const [newContent, SetNewContent] = useState(`${content}`)
    const PublishPost =   () => {
-        // const res =  await AxiosInstance.post(`/posts/`)
+        // const res =  await axios.post(`/posts/`)
 
         console.log('object');
    }
