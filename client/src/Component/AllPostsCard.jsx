@@ -1,4 +1,5 @@
 import React from 'react'
+import '../App.css'
 import {Link, useLocation } from "react-router-dom"
 import {  useState } from "react";
 import { ArrowRightAlt, CommentOutlined, FavoriteBorderOutlined, Share } from "@material-ui/icons";
@@ -23,13 +24,13 @@ const AllPostsCard = ({post}) => {
   };
 
   return (
-    <div>
-              <div className="flex flex-col md:flex-row justify-around text-center p-4" >
+    <div className='w-full'>
+              <div className="flex flex-col md:flex-row justify-around text-center" >
 
                         <div 
-                          className="m-5 mb-2 md:w-1/2 ">
+                          className="m-5 mb-2 ">
                                     <div 
-                                      className="bg-white p-5 lg:px-40 relative text-left">
+                                      className="bg-white p-5  relative text-left">
                                                         <h3
                                                         className="font-serif text-left capitalize text-2xl tracking-wider font-semibold"> 
                                                         <Link to={`/posts/${post._id}`}>
