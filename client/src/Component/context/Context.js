@@ -17,9 +17,11 @@ export const Context = createContext(INITIAL_STATE);
 
 
 export const ContextProvider = ({ children }) => {    
-        const [state, dispatch ] = useReducer(Reducer, INITIAL_STATE);
-        const [Allpost , setAllPost ] = useState([]);
-         const [newPost, setNewPost] = useState({});
+     const [state, dispatch ] = useReducer(Reducer, INITIAL_STATE);
+     const [Allpost , setAllPost ] = useState([]);
+     const [newPost, setNewPost] = useState({});
+    const [RandomPosts, setRandomPosts ] = useState([]);
+         
 
 
 
@@ -28,12 +30,10 @@ export const ContextProvider = ({ children }) => {
         const res = await axios.get('https://cracked-ink-cv.herokuapp.com/api/posts');    
         setAllPost(res.data);
         setNewPost(res.data[res.data.length - 1]  );
-        };
+        setRandomPosts(res.data.splice(0, 3));
+    };
         getDetails();  
         }, [Allpost])
-
-
-  
 
         
 
@@ -56,6 +56,7 @@ export const ContextProvider = ({ children }) => {
                         setAllPost,
                         newPost,
                         setNewPost,
+                        RandomPosts,
                         
                     
             }} 
