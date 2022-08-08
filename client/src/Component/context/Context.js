@@ -21,6 +21,7 @@ export const ContextProvider = ({ children }) => {
      const [Allpost , setAllPost ] = useState([]);
      const [newPost, setNewPost] = useState({});
     const [RandomPosts, setRandomPosts ] = useState([]);
+    const [RandomArr, setRandomArr] = useState([])
          
 
 
@@ -30,7 +31,9 @@ export const ContextProvider = ({ children }) => {
         const res = await axios.get('https://cracked-ink-cv.herokuapp.com/api/posts');    
         setAllPost(res.data);
         setNewPost(res.data[res.data.length - 1]  );
-        setRandomPosts(res.data.splice(0, 3));
+        setRandomArr(res.data)
+        setRandomPosts(RandomArr.splice(0, 3));
+        
     };
         getDetails();  
         }, [Allpost])
