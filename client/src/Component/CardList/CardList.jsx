@@ -13,7 +13,7 @@ const CardList = ({post} ) => {
     <div className='CardList bg-gray-100'>
             <img 
                 src={PF + post.photo} 
-                alt="this is your picture"  
+                alt=""  
                 className='CardImg'
                 
               />
