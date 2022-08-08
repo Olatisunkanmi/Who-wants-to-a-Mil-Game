@@ -2,6 +2,7 @@ import { CardList  } from "../Index"
 import './FeaturedCard.css'
 import { useContext } from "react";
 import { Context } from "../context/Context";
+import { Link } from "react-router-dom";
 
 
 const FeaturedCard = () => {
@@ -26,9 +27,11 @@ const FeaturedCard = () => {
          
          
           <div>
+          <Link to='/posts'>
           <button className='m-5 p-3 font-bold bg-black text-white hover:bg-veryLightBrown hover:text-black'> 
           View Older Posts
           </button>
+          </Link>
           </div>
    </div>
 
