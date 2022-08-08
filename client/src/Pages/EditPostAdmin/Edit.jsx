@@ -148,15 +148,8 @@ const Edit = () => {
             <div className='featured--posts'>
             <p className='featured-header'>Featured Posts</p>
             <ul className="featured--post--ul">
-                             {   Allpost.map (cur => (
-                                                      <FeaturedPosts 
-                                                      key={cur.title}
-                                                      post={cur} />
-                                                    ))
-                                                  }
-                              
-                       
-                                                  </ul>
+                             {  Allpost.map (cur => ( <FeaturedPosts  key={cur.title} post={cur} /> ))  }
+             </ul>
         
         
         
