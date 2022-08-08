@@ -57,8 +57,6 @@ export const ContextProvider = ({ children }) => {
                         newPost,
                         setNewPost,
                         RandomPosts,
-                        
-                    
             }} 
          >  
             {children}
