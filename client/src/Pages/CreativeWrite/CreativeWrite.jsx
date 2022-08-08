@@ -1,11 +1,6 @@
 import { Topbar, FeaturedCard, Header, Footer, FirstCard } from "../../Component/Index"
-import { useEffect } from "react"
-import axios from "axios";
-import { useState } from "react"
-
 
 export default function CreativeWrite () {
-
 
   return (
         <div>
@@ -13,8 +8,8 @@ export default function CreativeWrite () {
     <Header />
     <Topbar  /> 
     <FirstCard />
+    <FeaturedCard/>
     <Footer /> 
-
         </div>
   )
 }
