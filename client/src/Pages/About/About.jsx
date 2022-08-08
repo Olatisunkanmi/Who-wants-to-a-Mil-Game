@@ -41,7 +41,7 @@ const About = () => {
                                                                       <p className="font-mono text-md xl:text-xl leading-normal">
                                                                       Hello there and Welcome to my blog. <br />
                                                                       My name is <span className='font-bold text-black text-1xl'>Olasunkanmi. </span>
-                                                                      I am a Full-Stack Developer as well as a Creative Writer.
+                                                                      I am a <strong>JavaScript Full-Stack  </strong> Developer as well as a Creative Writer.
                                                                       Before I tell you about myself, something occurred to me recently and I would like to tell you about it 
                                                                       <br />
                                                                       <br />
