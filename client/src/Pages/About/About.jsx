@@ -93,20 +93,20 @@ const About = () => {
 
                         <div className="w-3/5 text-center space-x-3 md:space-x-10 text-3xl">
 
-                                    <a href="https://github.com/Olatisunkanmi " target='_blank'>
+                                    <a href="https://github.com/Olatisunkanmi " target='_blank' rel="noreferrer">
                                     <GitHub className="icons"/>
                                     </a>
                                     
 
-                                    <a href="https://instagram.com/olatisunkanmi__?igshid=YmMyMTA2M2Y=" target='_blank'>
+                                    <a href="https://instagram.com/olatisunkanmi__?igshid=YmMyMTA2M2Y=" target='_blank' rel="noreferrer">
                                     <Instagram className="icons"/>
                                     </a>
 
-                                      <a href='https://twitter.com/olatisunkanmi_ ' target='_blank'> 
+                                      <a href='https://twitter.com/olatisunkanmi_ ' target='_blank' rel="noreferrer"> 
                                       <Twitter className="icons"/>
                                       </a>
 
-                                    <a href='https://www.linkedin.com/in/olasunkanmi-igbasan-591447223/ ' target='_blank'>
+                                    <a href='https://www.linkedin.com/in/olasunkanmi-igbasan-591447223/ ' target='_blank' rel="noreferrer">
                                   <LinkedIn className="icons"/>
                                     </a>
                                   
