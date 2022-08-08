@@ -1,5 +1,4 @@
 import { LocalCafeOutlined } from '@material-ui/icons';
-import {Link } from 'react-router-dom'
 
 const Topbar = () => {
   return (
@@ -24,31 +23,36 @@ const Topbar = () => {
                                                  <a href='/home' className='font-serif cursor-pointer md:text-xl
                                                 font-semibold
                                                 
-                                                hover:text-veryLightBrown' > Home </a>
+                                                hover:text-veryLightBrown' 
+                                                        rel="noreferrer" > Home </a>
                                         </li>
 
                                         <li> 
                                                         <a href='/posts' className='font-serif cursor-pointer md:text-xl
                                                 font-semibold
-                                                hover:text-veryLightBrown' > Write ups</a>
+                                                hover:text-veryLightBrown' 
+                                                        rel="noreferrer" > Write ups</a>
                                         </li>
                                         <li> 
                                                
-                                                        <a href='' className='font-serif cursor-pointer md:text-xl
+                                                        <a href='/services' className='font-serif cursor-pointer md:text-xl
                                                 font-semibold
-                                                hover:text-veryLightBrown' > Services </a>
+                                                hover:text-veryLightBrown' 
+                                                        rel="noreferrer" > Services </a>
                                         </li>
                                         <li> 
                                              
                                                         <a href='/'  className='font-serif cursor-pointer md:text-xl
                                                 font-semibold
-                                                hover:text-veryLightBrown'> About Me </a>
+                                                hover:text-veryLightBrown' 
+                                                        rel="noreferrer"> About Me </a>
                                         </li>
                                       
                                         <li >
                                         <a
                                         href='https://www.buymeacoffee.com/olatisun'
                                         target='_blank'
+                                        rel="noreferrer"
                                           className='font-serif cursor-pointer md:text-xl
                                           font-bold
                                           text-brightRed'> Buy ME Coffee <LocalCafeOutlined /> </a>
