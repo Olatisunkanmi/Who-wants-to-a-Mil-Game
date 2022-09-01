@@ -1,18 +1,29 @@
 .icons {
-  font-size: 50px;
-  cursor: pointer;
+	font-size: 50px;
+	cursor: pointer;
 }
 
-.about{
-  font-family: 'Berkshire Swash', cursive;
-  font-size: 52px;
-  font-weight: bolder;
+.about {
+	font-family: 'Berkshire Swash', cursive;
+	font-size: 52px;
+	font-weight: bolder;
 }
 
 .para {
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.services-tag {
+	font-family: 'Philosopher', sans-serif;
+
+	font-size: 32px;
+	color: #b08968;
+}
+
+.Phil {
+	font-family: 'Philosopher', sans-serif;
 }
