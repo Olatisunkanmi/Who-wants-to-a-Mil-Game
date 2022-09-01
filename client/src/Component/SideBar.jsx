@@ -1,16 +1,14 @@
-import React from 'react';
 import { LocalCafeOutlined, Close } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 import '../App.css';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Context } from './context/Context';
 
 const SideBar = () => {
 	const { sideBar, setSideBar } = useContext(Context);
-	console.log(sideBar);
 	return (
 		<div
-			className={`fixed md:hidden w-full bg-white h-screen z-50 transition-all duration-900
+			className={`fixed md:hidden w-full bg-white h-screen z-50 transition-all duration-500
         ${sideBar ? 'block right-0' : '-right-full'}  `}
 		>
 			{/**   Side Bar */}
