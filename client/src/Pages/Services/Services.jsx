@@ -11,7 +11,6 @@ import {
 	Edit,
 } from '@material-ui/icons';
 import img1 from '../../Assests/ser.jpeg';
-import dev from '../../Assests/dev.png';
 import React from 'react';
 import '../../App.css';
 import { Header, Topbar, Footer } from '../../Component/Index';
@@ -41,8 +40,9 @@ const Services = () => {
 				</div>
 
 				{/***  BIO    */}
-				<div className='flex flex-col md:flex-row justify-around mt-10'>
-					<div className='m-auto'>
+				<div className='flex flex-col lg:flex-row justify-around mt-10'>
+					{/**  Upper imges */}
+					<div className=' md:hidden m-auto '>
 						<img
 							src={img1}
 							alt=''
@@ -50,7 +50,13 @@ const Services = () => {
 						/>
 					</div>
 
-					<div className='w-full p-5 text-lg md:w-3/6 flex flex-col mt-10 space-y-5'>
+					{/**!//!  Upper imges  --- B */}
+
+					<div className='p-10 hidden md:w-full lg:hidden md:flex flex-col mt-10 space-y-5'>
+						<img src={img1} alt='' className='w-full object-cover' />
+					</div>
+
+					<div className='w-full p-5 text-lg lg:w-3/6 flex flex-col mt-10 space-y-5'>
 						<p className='Phil text-bold text-3xl '>
 							{' '}
 							<ArrowRight /> Me !{' '}
@@ -75,11 +81,10 @@ const Services = () => {
 						</p>
 
 						{/**  SEND A MAIL  */}
-						<div>
-							<div className='p-5  xl:w-2/6  bg-veryLightBrown rounded-xl'>
-								<button className='items-center text-md font-serif '>
-									Send me a Mail. <Mail />
-								</button>
+						<div className='p-5  xl:w-2/6  bg-veryLightBrown rounded-xl'>
+							<div className='flex flex-row justify-center items-center  text-md font-serif '>
+								<button>Send me a Mail.</button>
+								<Mail />
 							</div>
 						</div>
 
@@ -132,7 +137,7 @@ const Services = () => {
 
 					{/** IMAGEE  */}
 
-					<div className=' hidden md:w-2/6 md:flex flex-col mt-10 space-y-5'>
+					<div className=' hidden lg:w-3/6  lg:flex flex-col mt-10 space-y-5'>
 						<img src={img1} alt='' className='w-full object-cover' />
 					</div>
 				</div>
