@@ -5,10 +5,11 @@ const Topbar = () => {
 		<div className=''>
 			<div
 				className='
+								hidden
                                 lg:w-4/6
                                 m-auto 
                                 md:justify-around 
-                                flex flex-row 
+                                md:flex flex-row 
                                 p-5 
                                 mt-7 border-4 border-y-black
                                 border-x-0'

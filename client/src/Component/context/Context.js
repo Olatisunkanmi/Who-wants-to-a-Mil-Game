@@ -24,7 +24,7 @@ export const ContextProvider = ({ children }) => {
 	const [newPost, setNewPost] = useState({});
 	const [RandomPosts, setRandomPosts] = useState([]);
 	const [RandomArr, setRandomArr] = useState([]);
-
+	const [sideBar, setSideBar] = useState(false);
 	useEffect(() => {
 		const getDetails = async () => {
 			const res = await axios.get(
@@ -55,6 +55,8 @@ export const ContextProvider = ({ children }) => {
 				newPost,
 				setNewPost,
 				RandomPosts,
+				sideBar,
+				setSideBar,
 			}}
 		>
 			{children}

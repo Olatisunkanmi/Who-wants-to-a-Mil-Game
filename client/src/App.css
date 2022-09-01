@@ -17,6 +17,10 @@
 	text-overflow: ellipsis;
 }
 
+.ment {
+	font-size: 30px !important;
+	color: #b08968;
+}
 .services-tag {
 	font-family: 'Philosopher', sans-serif;
 

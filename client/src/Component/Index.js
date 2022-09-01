@@ -15,3 +15,4 @@ export { default as Write } from '../Pages/Write/Write';
 export { default as EachPosts } from './EachPost/EachPostsPage';
 export { default as AllPostsCard } from './AllPostsCard';
 export { default as Services } from '../Pages/Services/Services';
+export { default as SideBar } from './SideBar';
