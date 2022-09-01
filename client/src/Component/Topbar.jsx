@@ -46,6 +46,7 @@ const Topbar = () => {
 							Write ups
 						</a>
 					</li>
+
 					<li>
 						<a
 							href='/posts'
