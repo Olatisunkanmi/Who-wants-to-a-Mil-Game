@@ -2,20 +2,19 @@ import {
 	ArrowBack,
 	ArrowRight,
 	ArrowRightAlt,
-	Mail,
-} from '@material-ui/icons';
-import {
 	GitHub,
 	Instagram,
 	LinkedIn,
 	MailOutline,
 	Twitter,
+	Mail,
+	Edit,
 } from '@material-ui/icons';
-
 import img1 from '../../Assests/ser.jpeg';
+import dev from '../../Assests/dev.png';
 import React from 'react';
 import '../../App.css';
-import { Header, Topbar } from '../../Component/Index';
+import { Header, Topbar, Footer } from '../../Component/Index';
 
 const Services = () => {
 	return (
@@ -41,9 +40,17 @@ const Services = () => {
 					</p>
 				</div>
 
-				{/***  SOftware   */}
-				<div className='flex flex-row justify-around'>
-					<div className='w-3/6 flex flex-col mt-10 space-y-5'>
+				{/***  BIO    */}
+				<div className='flex flex-col md:flex-row justify-around mt-10'>
+					<div className='m-auto'>
+						<img
+							src={img1}
+							alt=''
+							className='rounded-full h-52 w-52 object-cover'
+						/>
+					</div>
+
+					<div className='w-full p-5 text-lg md:w-3/6 flex flex-col mt-10 space-y-5'>
 						<p className='Phil text-bold text-3xl '>
 							{' '}
 							<ArrowRight /> Me !{' '}
@@ -78,7 +85,7 @@ const Services = () => {
 
 						{/**  CONTACT LINKS  */}
 
-						<div className='w-full text-center space-x-3 md:space-x-10 text-3xl'>
+						<div className='w-full text-left space-x-3 md:space-x-10 text-3xl'>
 							<a
 								href='https://github.com/Olatisunkanmi '
 								target='_blank'
@@ -111,14 +118,28 @@ const Services = () => {
 								<LinkedIn className='icons' />
 							</a>
 
+							<a
+								href='https://www.linkedin.com/in/olasunkanmi-igbasan-591447223/ '
+								target='_blank'
+								rel='noreferrer'
+							>
+								<Edit className='icons' />
+							</a>
+
 							<MailOutline className='icons ' />
 						</div>
 					</div>
 
-					<div className='w-2/6 flex flex-col mt-10 space-y-5'>
+					{/** IMAGEE  */}
+
+					<div className=' hidden md:w-2/6 md:flex flex-col mt-10 space-y-5'>
 						<img src={img1} alt='' className='w-full object-cover' />
 					</div>
 				</div>
+			</div>
+
+			<div className='mt-20'>
+				<Footer />
 			</div>
 		</div>
 	);
