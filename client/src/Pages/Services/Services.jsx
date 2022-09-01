@@ -11,11 +11,14 @@ import {
 	Edit,
 } from '@material-ui/icons';
 import img1 from '../../Assests/ser.jpeg';
+import { useState } from 'react';
 import React from 'react';
 import '../../App.css';
 import { Header, Topbar, Footer } from '../../Component/Index';
 
 const Services = () => {
+	const [contactMe, setContactMe] = useState(true);
+	console.log(contactMe);
 	return (
 		<div>
 			<Header />
@@ -49,13 +52,10 @@ const Services = () => {
 							className='rounded-full h-52 w-52 object-cover'
 						/>
 					</div>
-
 					{/**!//!  Upper imges  --- B */}
-
 					<div className='p-10 hidden md:w-full lg:hidden md:flex flex-col mt-10 space-y-5'>
 						<img src={img1} alt='' className='w-full object-cover' />
 					</div>
-
 					<div className='w-full p-5 text-lg lg:w-3/6 flex flex-col mt-10 space-y-5'>
 						<p className='Phil text-bold text-3xl '>
 							{' '}
@@ -82,7 +82,12 @@ const Services = () => {
 
 						{/**  SEND A MAIL  */}
 						<div className='p-5  xl:w-2/6  bg-veryLightBrown rounded-xl'>
-							<div className='flex flex-row justify-center items-center  text-md font-serif '>
+							<div
+								className='flex flex-row justify-center items-center  text-md font-serif'
+								onClick={() =>
+									setContactMe((prevcontactMe) => !prevcontactMe)
+								}
+							>
 								<button>Send me a Mail.</button>
 								<Mail />
 							</div>
@@ -134,12 +139,66 @@ const Services = () => {
 							<MailOutline className='icons ' />
 						</div>
 					</div>
-
 					{/** IMAGEE  */}
+					{contactMe ? (
+						<div
+							className={` hidden lg:w-3/6  lg:flex flex-col mt-10 space-y-5 
+                        `}
+						>
+							<img
+								src={img1}
+								alt=''
+								className='w-full object-cover'
+							/>
+						</div>
+					) : (
+						<div className=' hidden lg:w-3/6  lg:flex flex-col mt-10 space-y-5'>
+							<div className='flex flex-col'>
+								<p className='Phil text-3xl text-black font-semibold'>
+									{' '}
+									Contact{' '}
+								</p>
 
-					<div className=' hidden lg:w-3/6  lg:flex flex-col mt-10 space-y-5'>
-						<img src={img1} alt='' className='w-full object-cover' />
-					</div>
+								<div className='mt-10 w-full space-y-5'>
+									<input
+										type='text'
+										placeholder=' Enter First Name'
+										className=' border-b-black border-b-2 outline-none w-full p-3 bg-inherit
+                                        placeholder:text-md placeholder:text-slate-600 font-semibold'
+									/>
+
+									<input
+										type='text'
+										placeholder=' Enter Last Name'
+										className=' border-b-black border-b-2 outline-none w-full p-3 bg-inherit
+                                        placeholder:text-md placeholder:text-slate-600 font-semibold'
+									/>
+
+									<input
+										type='text'
+										placeholder=' Enter Email Add..'
+										className=' border-b-black border-b-2 outline-none w-full p-3 bg-inherit
+                                        placeholder:text-md placeholder:text-slate-600 font-semibold'
+									/>
+
+									<textarea
+										name=''
+										id=''
+										placeholder='Leave a Message.'
+										className=' border-b-black border-b-2 outline-none w-full p-3 bg-inherit
+                                        placeholder:text-md placeholder:text-slate-600 font-semibold'
+										rows='5'
+									></textarea>
+
+									<div className=''>
+										<button className='p-5 bg-black text-white rounded-lg '>
+											Submit
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					)}
 				</div>
 			</div>
 
