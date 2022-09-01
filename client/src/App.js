@@ -17,7 +17,7 @@ import RequireAuth from './Hooks/RequireAuth';
 function App() {
 	return (
 		<div>
-			<div className='z-50'>
+			<div className='z-50  w-1/2 '>
 				<SideBar />
 			</div>
 			<BrowserRouter>
