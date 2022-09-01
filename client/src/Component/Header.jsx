@@ -15,7 +15,7 @@ const Header = () => {
 	const { sideBar, setSideBar } = useContext(Context);
 	return (
 		<div className='flex flex-row  '>
-			<div className=' w-11/12 md:w-full container max-w-6xl  px-5 p-3 mx-auto md:text-center '>
+			<div className=' w-11/12 md:w-full container max-w-6xl  px-5 p-3 mx-auto text-center '>
 				<Link to='/posts/' className='link'>
 					<h2 className='text-5xl font-bold md:text-center text-stone-800'>
 						Cracked Ink
