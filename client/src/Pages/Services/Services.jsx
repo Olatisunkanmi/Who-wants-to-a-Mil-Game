@@ -1,60 +1,127 @@
-import './Services.css';
-import {Footer } from '../Index'
-import pinball from '../../Assests/pinball.jpg'
+import {
+	ArrowBack,
+	ArrowRight,
+	ArrowRightAlt,
+	Mail,
+} from '@material-ui/icons';
+import {
+	GitHub,
+	Instagram,
+	LinkedIn,
+	MailOutline,
+	Twitter,
+} from '@material-ui/icons';
 
+import img1 from '../../Assests/ser.jpeg';
+import React from 'react';
+import '../../App.css';
+import { Header, Topbar } from '../../Component/Index';
 
 const Services = () => {
-  return (
-        <>
-         
-            <div className="services--container"> 
-                    <div className="services--header">
-                    <h3 className='services--h3'>Services </h3>
-                    <p className='services--para'>Software Developer & Creative Writer </p>
-                    </div>
+	return (
+		<div>
+			<Header />
+			<Topbar />
+			<div
+				className='
+                                flex flex-col
+                                lg:w-4/6
+                                m-auto'
+			>
+				{/** SErvices * */}
 
-                    <div className="creative--writing">
+				<div className=' justify-center w-full text-center mt-20'>
+					<p className='text-5xl font-semibold font-serif'>
+						{' '}
+						Services{' '}
+					</p>
+					<p className='services-tag'>
+						{' '}
+						Software Developer, Technical and Creative Writer.
+					</p>
+				</div>
 
-                        <div className='creative--writing--text-area'>   
-                        <p  className="creative--writing--header">Creative Writing </p>
-                        <p  className="creative--writing--para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia voluptatem enim consequuntur alias, incidunt labore repellat corrupti accusamus officiis, nisi commodi adipisci recusandae? 
-                        Perferendis aspernatur et reiciendis repudiandae itaque esse!</p>
+				{/***  SOftware   */}
+				<div className='flex flex-row justify-around'>
+					<div className='w-3/6 flex flex-col mt-10 space-y-5'>
+						<p className='Phil text-bold text-3xl '>
+							{' '}
+							<ArrowRight /> Me !{' '}
+						</p>
+						<p className=' leading-8'>
+							Hi again, I am <strong>Olasukanmi,</strong> a JavaScript
+							developer, intrested in building scalable and
+							problem-solving webApps.
+							<br />
+							<br />
+							In the fast evolving world we have found ourselves,
+							writing hovever is my favourite thing to do. I enjoy
+							writing articles because it allows me to learn, share my
+							knowledge, and gain insights from my readers. I also
+							enjoy writing articles that educate people, especially
+							beginners, in my field of expertise and as I continue to
+							learn. I enjoy writing articles because it allows me to
+							learn, share my knowledge, and gain insights from my
+							readers. I also enjoy writing articles that educate
+							people, especially beginners, in my field of expertise
+							and as I continue to learn.
+						</p>
 
-                        <button  className="creative--writing--btn">Contact </button>
-                        </div>
-                       
+						{/**  SEND A MAIL  */}
+						<div>
+							<div className='p-5  xl:w-2/6  bg-veryLightBrown rounded-xl'>
+								<button className='items-center text-md font-serif '>
+									Send me a Mail. <Mail />
+								</button>
+							</div>
+						</div>
 
-                        <div>
-                            <img src={pinball} alt="" 
-                            className="creative--writing--img"/>
-                        </div>
-                    </div>
+						{/**  CONTACT LINKS  */}
 
+						<div className='w-full text-center space-x-3 md:space-x-10 text-3xl'>
+							<a
+								href='https://github.com/Olatisunkanmi '
+								target='_blank'
+								rel='noreferrer'
+							>
+								<GitHub className='icons' />
+							</a>
 
+							<a
+								href='https://instagram.com/olatisunkanmi__?igshid=YmMyMTA2M2Y='
+								target='_blank'
+								rel='noreferrer'
+							>
+								<Instagram className='icons' />
+							</a>
 
-                    <div className="software--dev">
+							<a
+								href='https://twitter.com/olatisunkanmi_ '
+								target='_blank'
+								rel='noreferrer'
+							>
+								<Twitter className='icons' />
+							</a>
 
-                          <div>
-                            <img src={pinball} alt="" 
-                            className="software--dev--img"/>
-                        </div>
+							<a
+								href='https://www.linkedin.com/in/olasunkanmi-igbasan-591447223/ '
+								target='_blank'
+								rel='noreferrer'
+							>
+								<LinkedIn className='icons' />
+							</a>
 
-                        <div className="software--dev--text-area">
-                         <p className="software--dev--header">Software Developer </p>
-                        <p className="software--dev--para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia voluptatem enim consequuntur alias, incidunt labore repellat corrupti accusamus officiis, nisi commodi adipisci recusandae? 
-                        Perferendis aspernatur et reiciendis repudiandae itaque esse!</p>
+							<MailOutline className='icons ' />
+						</div>
+					</div>
 
-                        <button className="software--dev--btn">Contact </button>
-                        </div>
-                       
+					<div className='w-2/6 flex flex-col mt-10 space-y-5'>
+						<img src={img1} alt='' className='w-full object-cover' />
+					</div>
+				</div>
+			</div>
+		</div>
+	);
+};
 
-                       
-                    </div>
-            </div>
-
-            <Footer />
-        </>
-  )
-}
-
-export default Services
+export default Services;
