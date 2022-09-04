@@ -56,14 +56,13 @@ const SideBar = () => {
 
 					<li className='w-full p-2 text-black'>
 						<a
-							href='/posts'
+							href='/archives'
 							className='font-serif cursor-pointer md:text-md
                                             font-semibold
                                             hover:text-veryLightBrown'
 							rel='noreferrer'
 						>
-							{' '}
-							mail junks{' '}
+							Archives
 						</a>
 					</li>
 
