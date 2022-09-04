@@ -6,7 +6,7 @@ const Topbar = () => {
 			<div
 				className='
 								hidden
-                                lg:w-4/6
+                               
                                 m-auto 
                                 md:justify-around 
                                 md:flex flex-row 
@@ -49,14 +49,13 @@ const Topbar = () => {
 
 					<li>
 						<a
-							href='/posts'
+							href='/archives'
 							className='font-serif cursor-pointer md:text-md
                                                 font-semibold
                                                 hover:text-veryLightBrown'
 							rel='noreferrer'
 						>
-							{' '}
-							mail junks{' '}
+							Archives
 						</a>
 					</li>
 					<li>
