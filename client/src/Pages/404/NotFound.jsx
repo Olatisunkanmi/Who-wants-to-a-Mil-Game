@@ -17,7 +17,7 @@ const NotFound = () => {
 
 				<div className='text-center space-y-10 p-5'>
 					<p className='text-xl font-serif '>
-						The page you have requested for is <strong>NOT</strong>
+						The page you have requested for is <strong> NOT </strong>
 						available
 					</p>
 					<p className='text-xl font-serif '>
