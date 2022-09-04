@@ -1,4 +1,11 @@
 import {
+	SideBar,
+	EachPosts,
+	Header,
+	Topbar,
+	Footer,
+} from './Component/Index';
+import {
 	CreativeWrite,
 	Post,
 	About,
@@ -6,10 +13,9 @@ import {
 	Edit,
 	NotFound,
 	Write,
+	Archives,
 	Services,
-	EachPosts,
-	SideBar,
-} from './Component/Index';
+} from './Pages/index';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Context } from './Component/context/Context';
 import RequireAuth from './Hooks/RequireAuth';
@@ -20,6 +26,12 @@ function App() {
 			<div className='z-50  w-1/2 '>
 				<SideBar />
 			</div>
+
+			<div className=' lg:w-4/6 m-auto'>
+				<Header />
+				<Topbar />
+			</div>
+
 			<BrowserRouter>
 				<Routes>
 					<Route path='*' element={<NotFound />} />
@@ -27,6 +39,7 @@ function App() {
 					<Route exact path='/' element={<About />} />
 					<Route path='/home/' element={<CreativeWrite />} />
 					<Route path='/posts/' element={<EachPosts />} />
+					<Route path='/archives/' element={<Archives />} />
 					<Route path='/posts/:Id' element={<Post />} />
 					<Route path='/services' element={<Services />} />
 					<Route path='/admin-login' element={<Login />} />
@@ -40,6 +53,8 @@ function App() {
 					</Route>
 				</Routes>
 			</BrowserRouter>
+
+			<Footer />
 		</div>
 	);
 }
