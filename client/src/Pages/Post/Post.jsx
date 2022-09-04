@@ -1,16 +1,11 @@
-import {Header, SinglePost, Footer } from '../../Component/Index';
-
+import { SinglePost } from '../../Component/Index';
 
 const Post = () => {
-  return (
-  <>
-  
-    <Header />
-    <SinglePost />
-    <Footer />
- 
-  </>
-  )
-}
+	return (
+		<>
+			<SinglePost />
+		</>
+	);
+};
 
-export default Post
+export default Post;
