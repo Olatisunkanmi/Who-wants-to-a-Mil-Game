@@ -1,7 +1,5 @@
 import {
-	ArrowBack,
 	ArrowRight,
-	ArrowRightAlt,
 	GitHub,
 	Instagram,
 	LinkedIn,
@@ -14,15 +12,12 @@ import img1 from '../../Assests/ser.jpeg';
 import { useState } from 'react';
 import React from 'react';
 import '../../App.css';
-import { Header, Topbar, Footer } from '../../Component/Index';
 
 const Services = () => {
 	const [contactMe, setContactMe] = useState(true);
 	console.log(contactMe);
 	return (
 		<div>
-			<Header />
-			<Topbar />
 			<div
 				className='
                                 flex flex-col
@@ -200,10 +195,6 @@ const Services = () => {
 						</div>
 					)}
 				</div>
-			</div>
-
-			<div className='mt-20'>
-				<Footer />
 			</div>
 		</div>
 	);
