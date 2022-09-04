@@ -1,16 +1,10 @@
-import { Topbar, FeaturedCard, Header, Footer, FirstCard } from "../../Component/Index"
+import { FeaturedCard, FirstCard } from '../../Component/Index';
 
-export default function CreativeWrite () {
-
-  return (
-        <div>
-
-    <Header />
-    <Topbar  /> 
-    <FirstCard />
-    <FeaturedCard/>
-    <Footer /> 
-        </div>
-  )
+export default function CreativeWrite() {
+	return (
+		<div>
+			<FirstCard />
+			<FeaturedCard />
+		</div>
+	);
 }
-
