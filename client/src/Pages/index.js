@@ -1,0 +1,9 @@
+export { default as Archives } from './Archives/Archives';
+export { default as CreativeWrite } from './CreativeWrite/CreativeWrite';
+export { default as Login } from './Login/Login';
+export { default as About } from './About/About';
+export { default as Post } from './Post/Post';
+export { default as Edit } from './EditPostAdmin/Edit';
+export { default as NotFound } from './404/NotFound';
+export { default as Write } from './Write/Write';
+export { default as Services } from './Services/Services';
