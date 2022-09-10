@@ -55,11 +55,12 @@ const About = () => {
 						</div>
 
 						<div>
-							<button className='mt-10 border-4 p-3 bg-veryLightBrown rounded-lg font-bold'>
-								<Link to='/posts' className='link'>
-									Go To Blog
-								</Link>
-							</button>
+							<Link to='/posts' className='link'>
+								<button className='mt-10 border-4 p-3 bg-veryLightBrown rounded-lg font-bold'>
+									Go To Blog{' '}
+								</button>
+							</Link>
+
 							<p className='font-mono text-xl leading-relaxed'>
 								Enough With the boring stuffs, I promise you are going
 								to love it there.
