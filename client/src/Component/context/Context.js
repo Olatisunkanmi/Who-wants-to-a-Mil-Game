@@ -43,7 +43,7 @@ export const ContextProvider = ({ children }) => {
 			setPoemPosts(poemPosts.data.data);
 		};
 		getDetails();
-	}, [RandomArr]);
+	}, []);
 
 	// this UseEffect fn is started when there is change to our user
 	useEffect(() => {
