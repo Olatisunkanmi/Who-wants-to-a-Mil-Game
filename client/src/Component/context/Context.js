@@ -20,20 +20,27 @@ export const Context = createContext(INITIAL_STATE);
 
 export const ContextProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(Reducer, INITIAL_STATE);
-	const [Allpost, setAllPost] = useState([]);
-	const [newPost, setNewPost] = useState({});
-	const [RandomPosts, setRandomPosts] = useState([]);
-	const [RandomArr, setRandomArr] = useState([]);
+
 	const [sideBar, setSideBar] = useState(false);
+	const [junkPosts, setJunkPosts] = useState([]);
+	const [mainPosts, setMainPosts] = useState([]);
+	const [poemPosts, setPoemPosts] = useState([]);
+
 	useEffect(() => {
 		const getDetails = async () => {
-			const res = await axios.get(
-				'https://cracked-ink-cv.herokuapp.com/api/posts',
+			const mainPosts = await axios.get(
+				'http://localhost:3500/api/v2/posts/main/',
 			);
-			setAllPost(res.data);
-			setNewPost(res.data[res.data.length - 1]);
-			setRandomArr(res.data);
-			setRandomPosts(RandomArr.splice(0, 3));
+			const junkPosts = await axios.get(
+				'http://localhost:3500/api/v2/posts/junk/',
+			);
+			const poemPosts = await axios.get(
+				'http://localhost:3500/api/v2/posts/poems/',
+			);
+
+			setMainPosts(mainPosts.data.data);
+			setJunkPosts(junkPosts.data.data);
+			setPoemPosts(poemPosts.data.data);
 		};
 		getDetails();
 	}, [RandomArr]);
@@ -50,11 +57,9 @@ export const ContextProvider = ({ children }) => {
 				isFetching: state.isFetching,
 				error: state.error,
 				dispatch,
-				Allpost,
-				setAllPost,
-				newPost,
-				setNewPost,
-				RandomPosts,
+				junkPosts,
+				mainPosts,
+				poemPosts,
 				sideBar,
 				setSideBar,
 			}}
