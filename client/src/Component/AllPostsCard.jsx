@@ -10,20 +10,7 @@ import {
 } from '@material-ui/icons';
 
 const AllPostsCard = ({ post }) => {
-	const Path = useLocation();
-	const PostLikes = post.likes.length;
-	const [likes, setLikes] = useState(0);
-	const [isClicked, setIsClicked] = useState(false);
-
-	const handleClick = () => {
-		if (isClicked) {
-			setLikes(likes - 1);
-		} else {
-			setLikes(likes + 1);
-		}
-		setIsClicked(!isClicked);
-	};
-
+	console.log(post);
 	return (
 		<div className='w-full'>
 			<div className='flex flex-col md:flex-row justify-around text-center'>
@@ -47,16 +34,8 @@ const AllPostsCard = ({ post }) => {
 							<div className='space-x-5 mt-5'>
 								<Share />
 
-								<button
-									className={`like-button ${isClicked && 'liked'}`}
-									onClick={handleClick}
-								>
-									<span className='likes-counter'>{`Like | ${likes}`}</span>
-								</button>
-
 								<FavoriteBorderOutlined className='cursor-pointer' />
 								<span>
-									{post.comments.length}
 									<CommentOutlined />{' '}
 								</span>
 							</div>
