@@ -16,9 +16,7 @@ const AllPoemsCard = ({ post }) => {
 				<div className='m-5 mb-2 '>
 					<div className='bg-white p-5  relative text-left'>
 						<h3 className='font-serif text-left  capitalize text-2xl tracking-wider font-semibold header'>
-							<Link to={`/poebbxbbxbms/${post._id}`}>
-								{post.title}
-							</Link>
+							<Link to={`/poems/${post._id}`}>{post.title}</Link>
 						</h3>
 
 						<div className='mb-7 h-1 bg-zinc-700 border-none w-8'></div>
