@@ -11,7 +11,6 @@ const Posts = () => {
 				{mainPosts.map((cur) => (
 					<AllPostsCard key={cur._id} post={cur} />
 				))}
-				*/}
 			</div>
 		</div>
 	);
