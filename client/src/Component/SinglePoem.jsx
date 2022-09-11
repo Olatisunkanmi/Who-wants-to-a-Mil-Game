@@ -1,14 +1,39 @@
 import { Person } from '@material-ui/icons';
 import React from 'react';
 import '../App.css';
-
+import { useEffect, useState, useContext } from 'react';
+import axios from 'axios';
+import { useLocation } from 'react-router-dom';
+import { Context } from './context/Context';
 import { CommentSection } from './Index';
 
 const SinglePoem = () => {
+	const { poemPosts } = useContext(Context);
+	const [updatemode, setUpdateMode] = useState(false);
+	const [title, setTitle] = useState('');
+	const [desc, setDesc] = useState('');
+	const [SinglePoem, setSinglePoem] = useState('');
+	const [comments, setComments] = useState([]);
+
+	let location = useLocation().pathname.split('/')[2];
+	useEffect(() => {
+		const PoemPosts = async () => {
+			const poemPosts = await axios.get(
+				`https://cracked-ink-cv.herokuapp.com/api/posts/${location}`,
+			);
+			// console.log(poemPosts.data);
+			setSinglePoem(poemPosts.data);
+		};
+		PoemPosts();
+	});
+
 	return (
 		<div className=' m-auto  md:mt-20'>
 			<div className='mt-10 px-4 '>
-				<p className=' text-left text-5xl Theme '> Welcome Home</p>
+				<p className=' text-left text-5xl Theme '>
+					{' '}
+					{SinglePoem.title}
+				</p>
 				<div className='my-5 '>
 					<p className='text-xs ml-5 font-thin'>
 						<Person className='writer-icon' />
@@ -24,25 +49,7 @@ const SinglePoem = () => {
                     text-lg
                     leading-loose  first-letter:text-xl '
 					>
-						{' '}
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Veritatis maxime sed, dolorem repellendus exercitationem
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Veritatis maxime sed, dolorem repellendus
-						<br />
-						<br />
-						exercitationemLorem ipsum dolor sit amet consectetur
-						adipisicing elit. Veritatis maxime sed, dolorem
-						repellendus exercitationemLorem ipsum dolor sit amet
-						consectetur adipisicing elit. Veritatis maxime sed,
-						dolorem repellendus
-						<br />
-						<br />
-						exercitationemLorem ipsum dolor sit amet consectetur
-						adipisicing elit. Veritatis maxime sed, dolorem
-						repellendus exercitationem doloremque possimus impedit
-						veniam libero hic similique cumque reiciendis voluptates
-						ullam atque pariatur harum illo minima?
+						{SinglePoem.desc}
 					</p>
 				</div>
 			</div>
