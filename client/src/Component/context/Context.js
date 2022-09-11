@@ -25,25 +25,33 @@ export const ContextProvider = ({ children }) => {
 	const [mainPosts, setMainPosts] = useState([]);
 	const [poemPosts, setPoemPosts] = useState([]);
 
-	// useEffect(() => {
-	// 	const poemPosts = async () => {
-	// 		const poemPosts = await axios.get(
-	// 			'http://localhost:3500/api/v2/posts/poems/',
-	// 		);
-	// 		setPoemPosts(poemPosts.data.data);
-	// 	};
-	// 	poemPosts();
-	// });
-
 	useEffect(() => {
+		const poemPosts = async () => {
+			const poemPosts = await axios.get(
+				'https://crackedinkv2.herokuapp.com/api/v2/posts/poems/',
+			);
+			setPoemPosts(poemPosts.data.data);
+		};
+		poemPosts();
+
 		const mainPosts = async () => {
 			const mainPosts = await axios.get(
-				'http://localhost:3500/api/v2/posts/main/',
+				'https://crackedinkv2.herokuapp.com/api/v2/posts/main/',
 			);
 			setMainPosts(mainPosts.data.data);
 		};
 		mainPosts();
 	});
+
+	// useEffect(() => {
+	// 	const mainPosts = async () => {
+	// 		const mainPosts = await axios.get(
+	// 			'https://crackedinkv2.herokuapp.com/api/v2/posts/main/',
+	// 		);
+	// 		setMainPosts(mainPosts.data.data);
+	// 	};
+	// 	mainPosts();
+	// });
 
 	// useEffect(() => {
 	// 	const junkPosts = async () => {
