@@ -30,6 +30,7 @@ export const ContextProvider = ({ children }) => {
 			const poemPosts = await axios.get(
 				'https://crackedinkv2.herokuapp.com/api/v2/posts/poems/',
 			);
+
 			setPoemPosts(poemPosts.data.data);
 		};
 		poemPosts();
