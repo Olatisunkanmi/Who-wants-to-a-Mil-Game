@@ -15,6 +15,7 @@ import {
 	Write,
 	Archives,
 	Services,
+	EachPoem,
 	Poems,
 } from './Pages/index';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -41,7 +42,8 @@ function App() {
 					<Route path='/home/' element={<CreativeWrite />} />
 					<Route path='/posts/' element={<EachPosts />} />
 					<Route path='/archives/' element={<Archives />} />
-					<Route path='/poems/' element={<Poems />} />
+					<Route path='/poems/' element={<EachPoem />} />
+					<Route path='/poems/:Id' element={<Poems />} />
 					<Route path='/posts/:Id' element={<Post />} />
 					<Route path='/services' element={<Services />} />
 					<Route path='/admin-login' element={<Login />} />
