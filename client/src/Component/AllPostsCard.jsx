@@ -16,7 +16,7 @@ const AllPostsCard = ({ post }) => {
 			<div className='flex flex-col md:flex-row justify-around text-center'>
 				<div className='m-5 mb-2 '>
 					<div className='bg-white p-5  relative text-left'>
-						<h3 className='font-serif text-left Phil capitalize text-2xl tracking-wider font-semibold'>
+						<h3 className='font-serif text-left  capitalize text-2xl tracking-wider font-semibold header'>
 							<Link to={`/posts/${post._id}`}>{post.title}</Link>
 						</h3>
 
