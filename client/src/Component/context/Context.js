@@ -20,30 +20,41 @@ export const Context = createContext(INITIAL_STATE);
 
 export const ContextProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(Reducer, INITIAL_STATE);
-
 	const [sideBar, setSideBar] = useState(false);
 	const [junkPosts, setJunkPosts] = useState([]);
 	const [mainPosts, setMainPosts] = useState([]);
 	const [poemPosts, setPoemPosts] = useState([]);
 
+	// useEffect(() => {
+	// 	const poemPosts = async () => {
+	// 		const poemPosts = await axios.get(
+	// 			'http://localhost:3500/api/v2/posts/poems/',
+	// 		);
+	// 		setPoemPosts(poemPosts.data.data);
+	// 	};
+	// 	poemPosts();
+	// });
+
 	useEffect(() => {
-		const getDetails = async () => {
+		const mainPosts = async () => {
 			const mainPosts = await axios.get(
 				'http://localhost:3500/api/v2/posts/main/',
 			);
-			const junkPosts = await axios.get(
-				'http://localhost:3500/api/v2/posts/junk/',
-			);
-			const poemPosts = await axios.get(
-				'http://localhost:3500/api/v2/posts/poems/',
-			);
-
 			setMainPosts(mainPosts.data.data);
-			setJunkPosts(junkPosts.data.data);
-			setPoemPosts(poemPosts.data.data);
 		};
-		getDetails();
-	}, []);
+		mainPosts();
+	});
+
+	// useEffect(() => {
+	// 	const junkPosts = async () => {
+	// 		const junkPosts = await axios.get(
+	// 			'http://localhost:3500/api/v2/posts/junk/',
+	// 		);
+	// 		setJunkPosts(junkPosts.data.data);
+	// 		console.log(junkPosts.data.data);
+	// 	};
+	// 	junkPosts();
+	// });
 
 	// this UseEffect fn is started when there is change to our user
 	useEffect(() => {

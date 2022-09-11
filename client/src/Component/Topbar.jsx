@@ -49,15 +49,17 @@ const Topbar = () => {
 
 					<li>
 						<a
-							href='/archives'
+							href='/poems'
 							className='font-serif cursor-pointer md:text-md
                                                 font-semibold
                                                 hover:text-veryLightBrown'
 							rel='noreferrer'
 						>
-							Archives
+							{' '}
+							Poems
 						</a>
 					</li>
+
 					<li>
 						<a
 							href='/services'

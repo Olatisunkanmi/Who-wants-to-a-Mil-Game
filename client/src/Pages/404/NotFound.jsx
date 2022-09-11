@@ -2,11 +2,7 @@ import { Header, Topbar, Footer } from '../../Component/Index';
 const NotFound = () => {
 	return (
 		<div className=''>
-			<Header />
-			<Topbar />
-
 			{/** 404 Page  */}
-
 			<div className=' justify-center my-20 w-full text-center space-y-10 md:my-40'>
 				<p className='text-6xl lg:text-8xl font-semibold font-serif'>
 					404
@@ -30,7 +26,6 @@ const NotFound = () => {
 					</p>
 				</div>
 			</div>
-			<Footer />
 		</div>
 	);
 };

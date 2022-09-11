@@ -1,25 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Context } from '../../Component/context/Context';
+import { useContext } from 'react';
+import { ArchivesCard } from '../../Component/Index';
 
 const Archives = () => {
+	const { junkPosts } = useContext(Context);
+	// console.log(junkPosts);
+
+	let queryObj = { ...junkPosts };
+
 	return (
 		<div>
-			<div className=' lg:w-4/6 m-auto mt-20 space-y-3 flex justify-center text-center'>
-				<div className='flex flex-col '>
-					<p className='tracking-widest text-3xl font-thin'>
-						Archives{' '}
-					</p>
+			<p className='tracking-widest text-3xl font-thin'>Archives </p>
+			<div>
+				<div className=' lg:w-4/6 m-auto mt-20 space-y-3 flex justify-center text-center'>
 					<p className='font-thin text-3xl  tracking-widest'> 2022</p>
-					<Link
-						to='/posts'
-						className=' text-center flex md:flex-row space-x-7 mt-10 font-thin Phil text-xl border-b-2 border-stone-600 p-3'
-					>
-						<p className=''>
-							<span className='hidden md:block'> day</span>{' '}
-							<span> 199</span> :
-						</p>
-						<p className=''>What to Do When You’re Feeling Drained</p>
-					</Link>
+				</div>
+				<div className=' lg:w-4/6 m-auto mt-20 space-y-3 flex justify-center text-center'>
+					<div>
+						{junkPosts.map((cur) => (
+							<ArchivesCard key={cur._id} post={cur} />
+						))}
+					</div>
 				</div>
 			</div>
 		</div>

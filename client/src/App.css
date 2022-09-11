@@ -30,4 +30,21 @@
 
 .Phil {
 	font-family: 'Philosopher', sans-serif;
+	color: #b08968;
+}
+
+.Theme {
+	font-family: 'Philosopher', sans-serif;
+	color: #b08968;
+	font-weight: 700;
+}
+
+.writer-icon {
+	font-weight: 500;
+	font-size: 15px !important;
+}
+
+.writer {
+	font-weight: 600;
+	font-size: 15px;
 }
