@@ -10,7 +10,6 @@ import {
 } from '@material-ui/icons';
 
 const AllPostsCard = ({ post }) => {
-	console.log(post);
 	return (
 		<div className='w-full'>
 			<div className='flex flex-col md:flex-row justify-around text-center'>
