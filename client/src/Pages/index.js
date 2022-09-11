@@ -8,3 +8,4 @@ export { default as NotFound } from './404/NotFound';
 export { default as Write } from './Write/Write';
 export { default as Services } from './Services/Services';
 export { default as Poems } from './Poems/Poems';
+export { default as EachPoem } from './EachPoemPost.jsx/EachPoemPage';
