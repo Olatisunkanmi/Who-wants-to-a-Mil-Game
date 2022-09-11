@@ -18,7 +18,9 @@ const SinglePost = () => {
 			const res = await axios.get(
 				`https://cracked-ink-cv.herokuapp.com/api/posts/${location}`,
 			);
+
 			setSinglePost(res.data);
+			console.log(res);
 		};
 		getSinglePost();
 	});
