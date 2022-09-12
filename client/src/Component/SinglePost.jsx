@@ -1,7 +1,13 @@
 import { useAuth } from '../Hooks/useAuth';
 import '../App.css';
-import { EditOutlined } from '@material-ui/icons';
-import { useLocation } from 'react-router-dom';
+import {
+	EditOutlined,
+	Book,
+	AccessTimeOutlined,
+	Person,
+	CommentOutlined,
+} from '@material-ui/icons';
+import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { CommentSection } from './Index';
@@ -20,25 +26,16 @@ const SinglePost = () => {
 			);
 
 			setSinglePost(res.data);
-			console.log(res);
 		};
 		getSinglePost();
 	});
 
 	const { user } = useAuth();
-	const PF = 'https://cracked-ink-cv.herokuapp.com/images/';
+	const PF = 'https://crackedinkv2.herokuapp.com/images/';
 	const [cat, setCats] = useState([]);
 	const [updatemode, setUpdateMode] = useState(false);
 	const [title, setTitle] = useState('');
 	const [desc, setDesc] = useState('');
-	const [comments, setComments] = useState([]);
-
-	// console.log(comments)
-	let COMMENTERROR = false;
-	const getCats = async () => {
-		// const res = await axios .get(`/posts`);
-	};
-	getCats();
 
 	const handleUpdate = async () => {
 		try {
@@ -51,38 +48,10 @@ const SinglePost = () => {
 		} catch (error) {}
 	};
 
-	const postComment = async () => {
-		const username = document.querySelector('#username');
-		const comment = document.querySelector('#comment');
-
-		if (username.value === '' || comment.value === '')
-			COMMENTERROR = true;
-
-		try {
-			const res = await axios.put(`/comment/${location}`, {
-				username: username.value,
-				comment: comment.value,
-			});
-			setComments(res.data.comments);
-
-			try {
-				username.value = ' ';
-				comment.value = '';
-			} catch (error) {}
-		} catch (error) {
-			console.log(error);
-		}
-	};
 	return (
 		<div>
+			{/**!	HEADER		 */}
 			<div className='text-center flex flex-col  items-center p-6 m-10'>
-				<img
-					src={PF + SinglePost.photo}
-					alt=''
-					className='w-full md:w-2/4 
-                                        text-center justify-center align-center object-cover'
-				/>
-				'
 				{updatemode ? (
 					<input
 						type='text'
@@ -91,19 +60,39 @@ const SinglePost = () => {
 						onChange={(e) => setTitle(e.target.value)}
 					/>
 				) : (
-					<p className='Phil mt-1 p-3 text-3xl md:text-5xl font-bold text-brightRed '>
+					<p className=' text-6xl text-black font-semibold tracking-wide Phil	'>
 						{' '}
 						{SinglePost.title}{' '}
 					</p>
 				)}
-				<div className='mt-1 flex flex-row space-x-3 items-center font-bold text-veryLightBrown  sp'>
-					<p className='capitalize text-black text-lg'>
-						{' '}
-						{SinglePost.username}
-					</p>
-					<p className=''>
-						{new Date(SinglePost.createdAt).toDateString()}
-					</p>
+
+				<div className='mt-7 flex flex-col items-center w-full'>
+					<div className='flex flex-row mt-10 items-center w-full  justify-center space-x-1'>
+						<Book className='writer-icon' />
+						<p className='uppercase colour writer'> lifeStyle </p>
+					</div>
+					<div className='flex flex-row mt-5 items-center w-full right-10 justify-center space-x-5'>
+						<Link
+							to='/services'
+							className='flex flex-row  items-center space-x-1'
+						>
+							<Person className='writer-icon' />
+
+							<p className='writer colour'>Igbasan Olasunkanmi</p>
+						</Link>
+
+						<div className='hidden md:flex flex-row  items-center space-x-1'>
+							<AccessTimeOutlined className='writer-icon' />
+							<p className=' writer colour'>
+								{new Date(SinglePost.createdAt).toDateString()}
+							</p>
+						</div>
+
+						<div className='hidden md:flex flex-row items-center space-x-1'>
+							<CommentOutlined className='writer-icon' />
+							<p className='writer colour'> 99 Comments</p>
+						</div>
+					</div>
 
 					{user && (
 						<button
@@ -113,6 +102,17 @@ const SinglePost = () => {
 							<EditOutlined />
 						</button>
 					)}
+				</div>
+
+				<div className='m-10'>
+					{
+						<img
+							src={PF + SinglePost.photo}
+							alt=''
+							className='w-full md:w-2/4 
+											text-center justify-center align-center object-cover'
+						/>
+					}
 				</div>
 				<hr className='w-1/2  mt-10 border-2 border-veryLightBrown' />
 			</div>
