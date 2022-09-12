@@ -14,7 +14,6 @@ const CommentSection = () => {
 	const postComment = async () => {
 		const username = document.querySelector('#username');
 		const comment = document.querySelector('#comment');
-
 		if (username.value === '' || comment.value === '')
 			COMMENTERROR = true;
 		try {
