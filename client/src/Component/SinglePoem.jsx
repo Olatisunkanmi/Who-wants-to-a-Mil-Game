@@ -3,7 +3,7 @@ import React from 'react';
 import '../App.css';
 import { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Context } from './context/Context';
 import { CommentSection } from './Index';
 
@@ -30,20 +30,22 @@ const SinglePoem = () => {
 	return (
 		<div className=' m-auto  md:mt-20'>
 			<div className='mt-10 px-4 '>
-				<p className=' text-left text-5xl Theme '>
-					{' '}
-					{SinglePoem.title}
-				</p>
-				<div className='my-5 '>
-					<p className='text-xs ml-5 font-thin'>
-						<Person className='writer-icon' />
-						<span className='writer text-veryLightBrown'>
-							{' '}
-							Igbasan Olasunkanmi
-						</span>
+				<div className='mb-10'>
+					<p className=' text-left text-5xl Theme '>
+						{' '}
+						{SinglePoem.title}
 					</p>
 				</div>
-				<div className='mt-20 lg:w-1/2 text-left'>
+
+				<Link to='/services' className=''>
+					<Person className='writer-icon' />
+					<p className='writer text-veryLightBrown'>
+						{' '}
+						Igbasan Olasunkanmi
+					</p>
+				</Link>
+
+				<div className='mt-10 lg:w-1/2 text-left'>
 					<p
 						className=' 
                     text-lg
