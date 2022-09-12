@@ -1,7 +1,37 @@
 import React from 'react';
+import axios from 'axios';
+import { useState } from 'react';
 import { Share } from '@material-ui/icons';
+import { useLocation } from 'react-router-dom';
 
 const CommentSection = () => {
+	const [comments, setComments] = useState([]);
+	const location = useLocation().pathname.split('/')[2];
+
+	// console.log(comments)
+	let COMMENTERROR = false;
+
+	const postComment = async () => {
+		const username = document.querySelector('#username');
+		const comment = document.querySelector('#comment');
+
+		if (username.value === '' || comment.value === '')
+			COMMENTERROR = true;
+		try {
+			const res = await axios.put(`/comment/${location}`, {
+				username: username.value,
+				comment: comment.value,
+			});
+			setComments(res.data.comments);
+			try {
+				username.value = ' ';
+				comment.value = '';
+			} catch (error) {}
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
 	return (
 		<div>
 			{/**Comment section */}
@@ -38,7 +68,8 @@ const CommentSection = () => {
 						<div>
 							<button
 								className='p-3 font-bold  bg-black text-brightRed  
-                                                                    hover:bg-veryLightBrown hover:text-black'
+                                                    hover:bg-veryLightBrown hover:text-black'
+								onClick={postComment}
 							>
 								Post Comment
 							</button>
