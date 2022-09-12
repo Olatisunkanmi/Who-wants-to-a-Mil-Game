@@ -6,7 +6,6 @@ import { Context } from '../context/Context';
 
 const FirstCard = ({}) => {
 	const { mainPosts } = useContext(Context);
-
 	const PF = 'https://cracked-ink-cv.herokuapp.com/images/';
 	// Send only last item to array to first card.
 
