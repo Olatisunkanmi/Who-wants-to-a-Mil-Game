@@ -22,10 +22,19 @@ export const ContextProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(Reducer, INITIAL_STATE);
 	const [sideBar, setSideBar] = useState(false);
 	const [junkPosts, setJunkPosts] = useState([]);
+	const [allPosts, setAllPosts] = useState([]);
 	const [mainPosts, setMainPosts] = useState([]);
 	const [poemPosts, setPoemPosts] = useState([]);
 
 	useEffect(() => {
+		const allPosts = async () => {
+			const Posts = await axios.get(
+				'https://crackedinkv2.herokuapp.com/api/v2/posts',
+			);
+			setAllPosts(Posts.data.data);
+		};
+		allPosts();
+
 		const poemPosts = async () => {
 			const poemPosts = await axios.get(
 				'https://crackedinkv2.herokuapp.com/api/v2/posts/poems/',
@@ -79,6 +88,7 @@ export const ContextProvider = ({ children }) => {
 				dispatch,
 				junkPosts,
 				mainPosts,
+				allPosts,
 				poemPosts,
 				sideBar,
 				setSideBar,
