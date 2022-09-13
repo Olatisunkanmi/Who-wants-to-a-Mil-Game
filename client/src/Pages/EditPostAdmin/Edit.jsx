@@ -19,7 +19,7 @@ import { useContext } from 'react';
 import { Context } from '../../Component/context/Context';
 
 const Edit = () => {
-	const { Allpost } = useContext(Context);
+	const { allPosts } = useContext(Context);
 
 	const { user, dispatch } = useAuth();
 	const handleLogout = () => {
@@ -139,7 +139,7 @@ const Edit = () => {
 					<div className='featured--posts'>
 						<p className='featured-header'>Featured Posts</p>
 						<ul className='featured--post--ul'>
-							{Allpost.map((cur) => (
+							{allPosts.map((cur) => (
 								<FeaturedPosts key={cur.title} post={cur} />
 							))}
 						</ul>
