@@ -7,13 +7,14 @@ import { useLocation } from 'react-router-dom';
 const CommentSection = () => {
 	const [comments, setComments] = useState([]);
 	const location = useLocation().pathname.split('/')[2];
-
+	console.log(location);
 	// console.log(comments)
 	let COMMENTERROR = false;
 
 	const postComment = async () => {
 		const username = document.querySelector('#username');
 		const comment = document.querySelector('#comment');
+
 		if (username.value === '' || comment.value === '')
 			COMMENTERROR = true;
 		try {
