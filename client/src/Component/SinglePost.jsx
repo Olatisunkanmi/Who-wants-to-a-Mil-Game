@@ -26,12 +26,15 @@ const SinglePost = () => {
 			);
 
 			setSinglePost(res.data);
+			// setComments(SinglePost.comments)
 		};
+
 		getSinglePost();
 	});
 
 	const { user } = useAuth();
 	const PF = 'https://crackedinkv2.herokuapp.com/images/';
+
 	const [cat, setCats] = useState([]);
 	const [updatemode, setUpdateMode] = useState(false);
 	const [title, setTitle] = useState('');
