@@ -34,7 +34,7 @@ const Login = () => {
 			// To auth user if !user
 			// send a login error
 			const res = await axios.post(
-				'https://cracked-ink-cv.herokuapp.com/api/auth/login',
+				'https://crackedinkv2.herokuapp.com/api/v2/auth/login',
 				{
 					username: userRef.current.value,
 					password: passwordRef.current.value,
@@ -55,9 +55,9 @@ const Login = () => {
 	// console.log(user)
 
 	return (
-		<div class='wrapper'>
-			<div class='wrapper-div'>
-				<div class='register--header'>
+		<div className='wrapper'>
+			<div className='wrapper-div'>
+				<div className='register--header'>
 					<h3>Admin Login</h3>
 				</div>
 
