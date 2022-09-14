@@ -47,12 +47,14 @@ function App() {
 					<Route path='/posts/:Id' element={<Post />} />
 					<Route path='/services' element={<Services />} />
 					<Route path='/admin-login' element={<Login />} />
-					<Route path='/admin-login/edit' element={<Edit />} />
-					<Route path='/admin-login/edit/:Id' element={<Write />} />
-					<Route
-						path='/admin-login/edit/adminwrite'
-						element={<Write />}
-					/>
+					<Route element={<RequireAuth />}>
+						<Route path='/admin-login/edit' element={<Edit />} />
+						<Route path='/admin-login/edit/:Id' element={<Write />} />
+						<Route
+							path='/admin-login/edit/adminwrite'
+							element={<Write />}
+						/>
+					</Route>
 				</Routes>
 			</BrowserRouter>
 
