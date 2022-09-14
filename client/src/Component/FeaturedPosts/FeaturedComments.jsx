@@ -2,9 +2,9 @@ import React from 'react';
 
 const FeaturedComments = ({ post }) => {
 	return (
-		<>
-			<p>HI </p>
-		</>
+		<div>
+			<div>{post}</div>
+		</div>
 	);
 };
 
