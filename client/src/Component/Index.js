@@ -12,3 +12,4 @@ export { default as SideBar } from './SideBar';
 export { default as ArchivesCard } from './ArchivesCard';
 export { default as SinglePoem } from './SinglePoem';
 export { default as CommentSection } from './CommentSection';
+export { default as FeaturedComments } from './FeaturedPosts/FeaturedComments';
