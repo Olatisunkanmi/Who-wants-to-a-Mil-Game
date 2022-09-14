@@ -15,7 +15,7 @@ const CommentSection = () => {
 	useEffect(() => {
 		const getComments = async () => {
 			const res = await axios.get(
-				`http://localhost:3500/api/v2/posts/${location}/comments/`,
+				`https://crackedinkv2.herokuapp.com/api/v2/posts/${location}/comments/`,
 			);
 			setComments(res.data.data);
 		};
@@ -30,7 +30,7 @@ const CommentSection = () => {
 			COMMENTERROR = true;
 		try {
 			const res = await axios.post(
-				`http://localhost:3500/api/v2/posts/${location}/comments/`,
+				`https://crackedinkv2.herokuapp.com/api/v2/posts/${location}/comments/`,
 				{
 					username: username.value,
 					comment: comment.value,
