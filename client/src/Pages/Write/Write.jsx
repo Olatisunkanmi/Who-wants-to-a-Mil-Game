@@ -16,6 +16,7 @@ export default function Write() {
 		e.preventDefault();
 
 		const newPost = {
+			username: user.username,
 			title: title,
 			desc: desc,
 		};
@@ -55,56 +56,68 @@ export default function Write() {
 			// navigate(
 			// 	`https://crackedinkv2.herokuapp.com/api/v2/posts/${res.data._id}`,
 			// );
+			navigate(
+				`https://crackedinkv2.herokuapp.com/api/v2/posts/${res.data._id}`,
+			);
 		} catch (error) {
 			console.log(error);
 		}
 	};
 
 	return (
-		<div className='write'>
-			{file ? (
-				<img
-					className='writeImg'
-					src={URL.createObjectURL(file)}
-					alt=''
-				/>
-			) : (
-				<img src={upload} className='writeImg' alt='' />
-			)}
+		<div className=' flex flex-row mt-10 justify-around m-auto'>
+			<div className='w-2/6 border-4 border-stone-500 p-3 bg-white'>
+				{file ? (
+					<img className='' src={URL.createObjectURL(file)} alt='' />
+				) : (
+					<img src={upload} className=' ' alt='' />
+				)}
+			</div>
 
-			<form className='writeForm' onSubmit={HandleSubmit}>
-				<div className='writeFormGroup'>
-					<label htmlFor='fileInput'>
-						<i className='writeIcon fas fa-plus'></i>
-					</label>
+			<div className='w-3/6 p-5 bg-white '>
+				<form className='space-y-20' onSubmit={HandleSubmit}>
+					<div className=''>
+						<label htmlFor='fileInput'>
+							<i className=' bg-stone-500 writeIcon fas fa-plus'></i>
+						</label>
 
-					<input
-						id='fileInput'
-						type='file'
-						style={{ display: 'none' }}
-						onChange={(e) => setFile(e.target.files[0])}
-					/>
+						<input
+							id='fileInput'
+							type='file'
+							style={{ display: 'none' }}
+							onChange={(e) => setFile(e.target.files[0])}
+						/>
 
-					<input
-						className='writeInput'
-						placeholder='Title'
-						type='text'
-						onChange={(e) => setTitle(e.target.value)}
-					/>
-				</div>
-				<div className='writeFormGroup'>
-					<textarea
-						className='writeInput writeText'
-						placeholder='Tell your story...'
-						type='text'
-						onChange={(e) => setDesc(e.target.value)}
-					/>
-				</div>
+						<input
+							className='p-5 outline-none border-b-black border-b-2 placeholder:font-semibold placeholder:text-black'
+							placeholder='Title'
+							type='text'
+							onChange={(e) => setTitle(e.target.value)}
+						/>
+					</div>
+					<div className=''>
+						<textarea
+							className='p-5 outline-none border-b-black border-b-2 placeholder:font-semibold placeholder:text-black'
+							placeholder='Tell your story...'
+							type='text'
+							onChange={(e) => setDesc(e.target.value)}
+						/>
+					</div>
 
-				<button className='writeSubmit' type='submit'>
-					Publish
-				</button>
-			</form>
+					<select className='p-3 text-black font-bold bg-veryLightBrown rounded '>
+						<option selected> MAIN </option>
+						<option> JUNK </option>
+						<option> POEM </option>
+					</select>
+
+					<button
+						className='p-3 ml-5 text-black font-bold bg-veryLightBrown rounded '
+						type='submit'
+					>
+						Publish
+					</button>
+				</form>
+			</div>
 		</div>
 	);
 }
