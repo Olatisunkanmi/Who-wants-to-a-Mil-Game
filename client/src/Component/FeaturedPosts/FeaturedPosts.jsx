@@ -11,7 +11,6 @@ import { useNavigate } from 'react-router-dom';
 
 const FeaturedPosts = ({ post }) => {
 	const navigate = useNavigate();
-	console.log(post);
 	const id = post._id;
 	const DeletePost = async () => {
 		try {
