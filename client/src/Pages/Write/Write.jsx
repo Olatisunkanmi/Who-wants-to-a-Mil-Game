@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import upload from '../../Assests/upload.svg';
 import './Write.css';
 import { useAuth } from '../../Hooks/useAuth';
@@ -11,14 +11,19 @@ export default function Write() {
 	const [title, setTitle] = useState(' ');
 	const [desc, setDesc] = useState(' ');
 	const [file, setFile] = useState(null);
+	const [categories, setCategories] = useState(null);
 
 	const HandleSubmit = async (e) => {
 		e.preventDefault();
+
+		const category = document.querySelector('#categories').value;
+		setCategories(category);
 
 		const newPost = {
 			username: user.username,
 			title: title,
 			desc: desc,
+			categories: categories,
 		};
 
 		if (file) {
@@ -37,7 +42,7 @@ export default function Write() {
 			try {
 				// upload Image
 				const res = await axios.post(
-					'http://localhost:3500/api/v2/upload',
+					'https://crackedinkv2.herokuapp.com/api/v2/upload',
 				);
 				console.log(res);
 			} catch (error) {
@@ -49,15 +54,8 @@ export default function Write() {
 
 		try {
 			const res = await axios.post(
-				'http://localhost:3500/api/v2/posts/',
+				'https://crackedinkv2.herokuapp.com/api/v2/posts/',
 				newPost,
-			);
-
-			// navigate(
-			// 	`https://crackedinkv2.herokuapp.com/api/v2/posts/${res.data._id}`,
-			// );
-			navigate(
-				`https://crackedinkv2.herokuapp.com/api/v2/posts/${res.data._id}`,
 			);
 		} catch (error) {
 			console.log(error);
@@ -78,7 +76,7 @@ export default function Write() {
 				<form className='space-y-20' onSubmit={HandleSubmit}>
 					<div className=''>
 						<label htmlFor='fileInput'>
-							<i className=' bg-stone-500 writeIcon fas fa-plus'></i>
+							<i className=' bg-stone-500 border-4 text-black cursor-pointer rounded-xl flex w-40 h-20 text-xl  fas fa-plus'></i>
 						</label>
 
 						<input
@@ -104,10 +102,13 @@ export default function Write() {
 						/>
 					</div>
 
-					<select className='p-3 text-black font-bold bg-veryLightBrown rounded '>
-						<option selected> MAIN </option>
-						<option> JUNK </option>
-						<option> POEM </option>
+					<select
+						id='categories'
+						className='p-3 text-black font-bold bg-veryLightBrown rounded '
+					>
+						<option defaultValue> main </option>
+						<option> junk </option>
+						<option> Poems </option>
 					</select>
 
 					<button
