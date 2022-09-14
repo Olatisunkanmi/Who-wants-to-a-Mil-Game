@@ -19,7 +19,7 @@ const CommentSection = () => {
 			);
 			setComments(res.data.data);
 		};
-		// getComments();
+		getComments();
 	}, []);
 
 	const postComment = async () => {
