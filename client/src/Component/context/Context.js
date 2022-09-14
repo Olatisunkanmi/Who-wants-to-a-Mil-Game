@@ -23,34 +23,15 @@ export const ContextProvider = ({ children }) => {
 	const [sideBar, setSideBar] = useState(false);
 	const [junkPosts, setJunkPosts] = useState([]);
 	const [allPosts, setAllPosts] = useState([]);
-	const [mainPosts, setMainPosts] = useState([]);
-	const [poemPosts, setPoemPosts] = useState([]);
 
 	useEffect(() => {
-		// const allPosts = async () => {
-		// 	const Posts = await axios.get(
-		// 		'https://crackedinkv2.herokuapp.com/api/v2/posts',
-		// 	);
-		// 	setAllPosts(Posts.data.data);
-		// };
-		// allPosts();
-
-		const poemPosts = async () => {
-			const poemPosts = await axios.get(
-				'https://crackedinkv2.herokuapp.com/api/v2/posts/poems/',
+		const allPosts = async () => {
+			const Posts = await axios.get(
+				'https://crackedinkv2.herokuapp.com/api/v2/posts',
 			);
-
-			setPoemPosts(poemPosts.data.data);
+			setAllPosts(Posts.data.data);
 		};
-		poemPosts();
-
-		// const mainPosts = async () => {
-		// 	const mainPosts = await axios.get(
-		// 		'https://crackedinkv2.herokuapp.com/api/v2/posts/main/',
-		// 	);
-		// 	setMainPosts(mainPosts.data.data);
-		// };
-		// mainPosts();
+		allPosts();
 	});
 
 	// this UseEffect fn is started when there is change to our user
@@ -66,9 +47,7 @@ export const ContextProvider = ({ children }) => {
 				error: state.error,
 				dispatch,
 				junkPosts,
-				mainPosts,
 				allPosts,
-				poemPosts,
 				sideBar,
 				setSideBar,
 			}}
