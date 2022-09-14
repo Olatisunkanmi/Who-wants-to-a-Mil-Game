@@ -1,15 +1,30 @@
 import React from 'react';
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { FeaturedComments } from './Index';
 import { Share } from '@material-ui/icons';
 import { useLocation } from 'react-router-dom';
 
 const CommentSection = () => {
 	const [comments, setComments] = useState([]);
-	const location = useLocation().pathname.split('/')[2];
-	console.log(location);
+	let location = useLocation();
+	location = location.pathname.split('/')[2];
 	// console.log(comments)
 	let COMMENTERROR = false;
+
+	useEffect(() => {
+		const getComments = async () => {
+			try {
+				const res = await axios.get(
+					`http://localhost:3500/api/v2/posts/${location}/comments/`,
+				);
+				console.log(res.data.data);
+			} catch (err) {
+				console.log(err);
+			}
+		};
+		getComments();
+	});
 
 	const postComment = async () => {
 		const username = document.querySelector('#username');
@@ -18,19 +33,23 @@ const CommentSection = () => {
 		if (username.value === '' || comment.value === '')
 			COMMENTERROR = true;
 		try {
-			const res = await axios.put(`/comment/${location}`, {
-				username: username.value,
-				comment: comment.value,
-			});
-			setComments(res.data.comments);
-			try {
-				username.value = ' ';
-				comment.value = '';
-			} catch (error) {}
+			const res = await axios.post(
+				`http://localhost:3500/api/v2/posts/${location}/comments/`,
+				{
+					username: username.value,
+					comment: comment.value,
+				},
+			);
+			console.log(res.data.data);
+			setComments(res.data.data);
 		} catch (error) {
 			console.log(error);
 		}
 	};
+
+	// {comments.map((cur) => (
+	// 	<FeaturedComments key={cur._id} post={cur} />
+	// ))}
 
 	return (
 		<div>
@@ -42,7 +61,7 @@ const CommentSection = () => {
 						Leave a Reply
 					</h3>
 
-					<form className='flex flex-col space-y-10 '>
+					<div className='flex flex-col space-y-10 '>
 						<input
 							type='text'
 							id='username'
@@ -75,7 +94,7 @@ const CommentSection = () => {
 							</button>
 							<Share />
 						</div>
-					</form>
+					</div>
 				</div>
 
 				<div className='bg-stone-300 w-full p-5 md:w-4/6 '>
@@ -83,11 +102,7 @@ const CommentSection = () => {
 						Comments Sections
 					</h3>
 
-					<div className='mt-4 overflow-y-auto space-y-3 h-4/5'>
-						<div>
-							<p className='text-lg font-bold'> </p>
-						</div>
-					</div>
+					<div className='mt-4 overflow-y-auto space-y-3 h-4/5'></div>
 				</div>
 			</div>
 		</div>
