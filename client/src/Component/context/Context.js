@@ -27,13 +27,13 @@ export const ContextProvider = ({ children }) => {
 	const [poemPosts, setPoemPosts] = useState([]);
 
 	useEffect(() => {
-		const allPosts = async () => {
-			const Posts = await axios.get(
-				'https://crackedinkv2.herokuapp.com/api/v2/posts',
-			);
-			setAllPosts(Posts.data.data);
-		};
-		allPosts();
+		// const allPosts = async () => {
+		// 	const Posts = await axios.get(
+		// 		'https://crackedinkv2.herokuapp.com/api/v2/posts',
+		// 	);
+		// 	setAllPosts(Posts.data.data);
+		// };
+		// allPosts();
 
 		const poemPosts = async () => {
 			const poemPosts = await axios.get(
@@ -44,35 +44,14 @@ export const ContextProvider = ({ children }) => {
 		};
 		poemPosts();
 
-		const mainPosts = async () => {
-			const mainPosts = await axios.get(
-				'https://crackedinkv2.herokuapp.com/api/v2/posts/main/',
-			);
-			setMainPosts(mainPosts.data.data);
-		};
-		mainPosts();
+		// const mainPosts = async () => {
+		// 	const mainPosts = await axios.get(
+		// 		'https://crackedinkv2.herokuapp.com/api/v2/posts/main/',
+		// 	);
+		// 	setMainPosts(mainPosts.data.data);
+		// };
+		// mainPosts();
 	});
-
-	// useEffect(() => {
-	// 	const mainPosts = async () => {
-	// 		const mainPosts = await axios.get(
-	// 			'https://crackedinkv2.herokuapp.com/api/v2/posts/main/',
-	// 		);
-	// 		setMainPosts(mainPosts.data.data);
-	// 	};
-	// 	mainPosts();
-	// });
-
-	// useEffect(() => {
-	// 	const junkPosts = async () => {
-	// 		const junkPosts = await axios.get(
-	// 			'http://localhost:3500/api/v2/posts/junk/',
-	// 		);
-	// 		setJunkPosts(junkPosts.data.data);
-	// 		console.log(junkPosts.data.data);
-	// 	};
-	// 	junkPosts();
-	// });
 
 	// this UseEffect fn is started when there is change to our user
 	useEffect(() => {
