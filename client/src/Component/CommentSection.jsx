@@ -14,17 +14,13 @@ const CommentSection = () => {
 
 	useEffect(() => {
 		const getComments = async () => {
-			try {
-				const res = await axios.get(
-					`http://localhost:3500/api/v2/posts/${location}/comments/`,
-				);
-				console.log(res.data.data);
-			} catch (err) {
-				console.log(err);
-			}
+			const res = await axios.get(
+				`http://localhost:3500/api/v2/posts/${location}/comments/`,
+			);
+			setComments(res.data.data);
 		};
-		getComments();
-	});
+		// getComments();
+	}, []);
 
 	const postComment = async () => {
 		const username = document.querySelector('#username');
@@ -46,10 +42,6 @@ const CommentSection = () => {
 			console.log(error);
 		}
 	};
-
-	// {comments.map((cur) => (
-	// 	<FeaturedComments key={cur._id} post={cur} />
-	// ))}
 
 	return (
 		<div>
@@ -88,7 +80,6 @@ const CommentSection = () => {
 							<button
 								className='p-3 font-bold  bg-black text-brightRed  
                                                     hover:bg-veryLightBrown hover:text-black'
-								onClick={postComment}
 							>
 								Post Comment
 							</button>
@@ -102,7 +93,11 @@ const CommentSection = () => {
 						Comments Sections
 					</h3>
 
-					<div className='mt-4 overflow-y-auto space-y-3 h-4/5'></div>
+					<div className='mt-4 overflow-y-auto space-y-3 h-4/5'>
+						{comments.map((cur) => (
+							<FeaturedComments key={cur._id} post={cur} />
+						))}
+					</div>
 				</div>
 			</div>
 		</div>

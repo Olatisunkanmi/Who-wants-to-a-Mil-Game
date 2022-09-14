@@ -13,7 +13,7 @@ const Posts = () => {
 			setMainPosts(mainPosts.data.data);
 		};
 		mainPosts();
-	});
+	}, []);
 
 	return (
 		<div>

@@ -15,7 +15,7 @@ const Poems = () => {
 			setPoemPosts(poemPosts.data.data);
 		};
 		poemPosts();
-	});
+	}, []);
 
 	return (
 		<div className='  lg:w-3/5 m-auto mt-10 space-y-8'>

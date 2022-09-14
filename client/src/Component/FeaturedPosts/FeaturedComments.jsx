@@ -1,9 +1,10 @@
 import React from 'react';
 
 const FeaturedComments = ({ post }) => {
+	console.log(post);
 	return (
 		<div>
-			<div>{post}</div>
+			<div className='p-5 bg-white'>{post}</div>
 		</div>
 	);
 };
