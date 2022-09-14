@@ -1,9 +1,19 @@
 import { AllPostsCard } from '../Index';
-import { useContext } from 'react';
-import { Context } from '../context/Context';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const Posts = () => {
-	const { mainPosts } = useContext(Context);
+	const [mainPosts, setMainPosts] = useState([]);
+
+	useEffect(() => {
+		const mainPosts = async () => {
+			const mainPosts = await axios.get(
+				'https://crackedinkv2.herokuapp.com/api/v2/posts/main/',
+			);
+			setMainPosts(mainPosts.data.data);
+		};
+		mainPosts();
+	});
 
 	return (
 		<div>
