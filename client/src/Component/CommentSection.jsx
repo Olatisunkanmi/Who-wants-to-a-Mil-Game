@@ -83,7 +83,6 @@ const CommentSection = () => {
 							>
 								Post Comment
 							</button>
-							<Share />
 						</div>
 					</div>
 				</div>
