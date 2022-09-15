@@ -32,7 +32,7 @@ export const ContextProvider = ({ children }) => {
 			setAllPosts(Posts.data.data);
 		};
 		allPosts();
-	});
+	}, []);
 
 	// this UseEffect fn is started when there is change to our user
 	useEffect(() => {
