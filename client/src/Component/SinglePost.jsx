@@ -26,6 +26,7 @@ const SinglePost = () => {
 			);
 
 			setSinglePost(res.data);
+			console.log(res.data);
 			// setComments(SinglePost.comments)
 		};
 
@@ -34,15 +35,13 @@ const SinglePost = () => {
 
 	const { user } = useAuth();
 	const PF = 'https://crackedinkv2.herokuapp.com/images/';
-
-	const [cat, setCats] = useState([]);
 	const [updatemode, setUpdateMode] = useState(false);
 	const [title, setTitle] = useState('');
 	const [desc, setDesc] = useState('');
 
 	const handleUpdate = async () => {
 		try {
-			const res = await axios.put(`/posts/${SinglePost._id}`, {
+			await axios.put(`/posts/${SinglePost._id}`, {
 				username: user.username,
 				title,
 				desc,
@@ -64,8 +63,7 @@ const SinglePost = () => {
 					/>
 				) : (
 					<p className=' text-6xl text-black font-semibold tracking-wide Phil	'>
-						{' '}
-						{SinglePost.title}{' '}
+						{SinglePost.title}
 					</p>
 				)}
 
@@ -108,14 +106,12 @@ const SinglePost = () => {
 				</div>
 
 				<div className='m-10'>
-					{
-						<img
-							src={PF + SinglePost.photo}
-							alt=''
-							className='w-full md:w-2/4 
+					<img
+						src={PF + SinglePost.photo}
+						alt=''
+						className='w-full md:w-2/4 
 											text-center justify-center align-center object-cover'
-						/>
-					}
+					/>
 				</div>
 				<hr className='w-1/2  mt-10 border-2 border-veryLightBrown' />
 			</div>
@@ -130,8 +126,7 @@ const SinglePost = () => {
 						/>
 					) : (
 						<p className='first-letter:ml-6 first-letter:text-4xl leading-loose'>
-							{' '}
-							{SinglePost.desc}{' '}
+							{SinglePost.desc}
 						</p>
 					)}
 
