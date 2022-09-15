@@ -15,7 +15,6 @@ import '../../App.css';
 
 const Services = () => {
 	const [contactMe, setContactMe] = useState(true);
-	console.log(contactMe);
 	return (
 		<div>
 			<div
@@ -28,11 +27,9 @@ const Services = () => {
 
 				<div className=' justify-center w-full text-center mt-20'>
 					<p className='text-5xl font-semibold font-serif'>
-						{' '}
-						Services{' '}
+						Services
 					</p>
 					<p className='services-tag'>
-						{' '}
 						Software Developer, Technical and Creative Writer.
 					</p>
 				</div>
@@ -53,8 +50,7 @@ const Services = () => {
 					</div>
 					<div className='w-full p-5 text-lg lg:w-3/6 flex flex-col mt-10 space-y-5'>
 						<p className='Phil text-bold text-3xl '>
-							{' '}
-							<ArrowRight /> Me !{' '}
+							<ArrowRight /> Me !
 						</p>
 						<p className=' leading-8'>
 							Hi again, I am <strong>Olasukanmi,</strong> a JavaScript
@@ -150,8 +146,7 @@ const Services = () => {
 						<div className=' hidden lg:w-3/6  lg:flex flex-col mt-10 space-y-5'>
 							<div className='flex flex-col'>
 								<p className='Phil text-3xl text-black font-semibold'>
-									{' '}
-									Contact{' '}
+									Contact
 								</p>
 
 								<div className='mt-10 w-full space-y-5'>
