@@ -19,7 +19,6 @@ import {
 	Poems,
 } from './Pages/index';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Context } from './Component/context/Context';
 import RequireAuth from './Hooks/RequireAuth';
 
 function App() {
