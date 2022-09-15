@@ -1,12 +1,10 @@
 import React from 'react';
 import '../App.css';
-import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
 	ArrowRightAlt,
 	CommentOutlined,
 	FavoriteBorderOutlined,
-	Share,
 } from '@material-ui/icons';
 
 const AllPostsCard = ({ post }) => {
@@ -31,8 +29,6 @@ const AllPostsCard = ({ post }) => {
 							<div className=' h-1 bg-zinc-700 border-none w-8'></div>
 
 							<div className='space-x-5 mt-5'>
-								<Share />
-
 								<FavoriteBorderOutlined className='cursor-pointer' />
 								<span>
 									<CommentOutlined />{' '}
