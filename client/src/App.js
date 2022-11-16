@@ -24,13 +24,8 @@ import RequireAuth from './Hooks/RequireAuth';
 function App() {
 	return (
 		<div>
-			<div className='z-50  w-1/2 '>
-				<SideBar />
-			</div>
-
 			<div className=' lg:w-4/6 m-auto'>
 				<Header />
-				<Topbar />
 			</div>
 
 			<BrowserRouter>
