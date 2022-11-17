@@ -11,7 +11,7 @@ const Header = () => {
 		<div className='flex flex-row  '>
 			<div className=' ]container max-w-6xl  px-5 p-3 mx-auto text-center '>
 				<a
-					href='#'
+					href='/'
 					className='text-5xl font-bold md:text-center text-stone-800'
 				>
 					Cracked Ink
