@@ -55,7 +55,10 @@ const About = () => {
 						</div>
 
 						<div>
-							<Link to='/posts' className='link'>
+							<Link
+								to='/https://olatisun-1668675467323.hashnode.dev/'
+								className='link'
+							>
 								<button className='mt-10 border-4 p-3 bg-veryLightBrown rounded-lg font-bold'>
 									Go To Blog{' '}
 								</button>
