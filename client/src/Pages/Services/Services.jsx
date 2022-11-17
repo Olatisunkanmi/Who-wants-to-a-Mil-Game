@@ -120,7 +120,7 @@ const Services = () => {
 							</a>
 
 							<a
-								href='https://www.linkedin.com/in/olasunkanmi-igbasan-591447223/ '
+								href='https://dev.to/olatisunkanmi/ '
 								target='_blank'
 								rel='noreferrer'
 							>

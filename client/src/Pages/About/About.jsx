@@ -66,7 +66,21 @@ const About = () => {
 									>
 										{' '}
 										<button className='mt-10 border-4 p-3 bg-veryLightBrown rounded-lg font-bold flex flex-row items-center'>
-											Go To Blog
+											Creative Writing
+										</button>
+									</a>
+								</li>
+
+								<li>
+									<a
+										href='https://dev.to/olatisunkanmi/'
+										target='_blank'
+										rel='noreferrer'
+										className=''
+									>
+										{' '}
+										<button className='mt-10 border-4 p-3 bg-veryLightBrown rounded-lg font-bold flex flex-row items-center'>
+											Technical Writing
 										</button>
 									</a>
 								</li>
