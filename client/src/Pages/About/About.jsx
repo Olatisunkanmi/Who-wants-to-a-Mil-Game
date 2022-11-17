@@ -1,6 +1,7 @@
 import '../../App.css';
 import { Link } from 'react-router-dom';
 import profileImage from '../../Assests/sk.jpg';
+import { LocalCafeOutlined } from '@material-ui/icons';
 
 const About = () => {
 	return (
@@ -55,15 +56,19 @@ const About = () => {
 						</div>
 
 						<div>
-							<ul className='flex flex-row'>
-								<li
-									href='/https://olatisun-1668675467323.hashnode.dev/'
-									target='_blank'
-									rel='noreferrer'
-								>
-									<button className='mt-10 border-4 p-3 bg-veryLightBrown rounded-lg font-bold'>
-										Go To Blog{' '}
-									</button>
+							<ul className='flex flex-row items-center'>
+								<li>
+									<a
+										href='https://olatisun-1668675467323.hashnode.dev/'
+										target='_blank'
+										rel='noreferrer'
+										className=''
+									>
+										{' '}
+										<button className='mt-10 border-4 p-3 bg-veryLightBrown rounded-lg font-bold flex flex-row items-center'>
+											Go To Blog
+										</button>
+									</a>
 								</li>
 
 								<li>
@@ -71,12 +76,26 @@ const About = () => {
 										href='https://www.buymeacoffee.com/olatisun'
 										target='_blank'
 										rel='noreferrer'
-										className='font-serif cursor-pointer md:text-md
-                                          font-bold
-                                          text-brightRed'
+										className=''
 									>
 										{' '}
-										Buy ME Coffee <LocalCafeOutlined />{' '}
+										<button className='mt-10 border-4 p-3 bg-veryLightBrown rounded-lg font-bold flex flex-row items-center'>
+											Buy ME Coffee <LocalCafeOutlined />{' '}
+										</button>
+									</a>
+								</li>
+
+								<li>
+									<a
+										href='./services'
+										target='_blank'
+										rel='noreferrer'
+										className=''
+									>
+										{' '}
+										<button className='mt-10 border-4 p-3 bg-veryLightBrown rounded-lg font-bold flex flex-row items-center'>
+											Contact Me
+										</button>
 									</a>
 								</li>
 							</ul>
