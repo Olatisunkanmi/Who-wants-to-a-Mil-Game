@@ -55,14 +55,31 @@ const About = () => {
 						</div>
 
 						<div>
-							<Link
-								to='/https://olatisun-1668675467323.hashnode.dev/'
-								className='link'
-							>
-								<button className='mt-10 border-4 p-3 bg-veryLightBrown rounded-lg font-bold'>
-									Go To Blog{' '}
-								</button>
-							</Link>
+							<ul className='flex flex-row'>
+								<li
+									href='/https://olatisun-1668675467323.hashnode.dev/'
+									target='_blank'
+									rel='noreferrer'
+								>
+									<button className='mt-10 border-4 p-3 bg-veryLightBrown rounded-lg font-bold'>
+										Go To Blog{' '}
+									</button>
+								</li>
+
+								<li>
+									<a
+										href='https://www.buymeacoffee.com/olatisun'
+										target='_blank'
+										rel='noreferrer'
+										className='font-serif cursor-pointer md:text-md
+                                          font-bold
+                                          text-brightRed'
+									>
+										{' '}
+										Buy ME Coffee <LocalCafeOutlined />{' '}
+									</a>
+								</li>
+							</ul>
 
 							<p className='font-mono text-xl leading-relaxed'>
 								Enough With the boring stuffs, I promise you are going
